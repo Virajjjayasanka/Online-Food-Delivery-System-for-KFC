@@ -1,0 +1,144 @@
+
+
+<br><br><br>
+<div class="content">
+  <section class="content-header">
+    <h1>
+      Feed Back Informations
+      <small>Preview</small>
+    </h1>
+    <ol class="breadcrumb">
+      <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+      <li><a href="#">Forms</a></li>
+      <li class="active">Feed Back Informations </li>
+    </ol>
+  </section>
+
+  <br>
+  <div class="container">
+    <div class="col-md-11">
+      <div class="form-area ">
+        <form role="form" #frmFeedBack="ngForm" (ngSubmit)="saveFeedBAck()" novalidate >
+          <br style="clear:both">
+
+
+          <!--<h3 style="margin-bottom: 25px; text-align: center;">Contact Form</h3>-->
+          <!-- <div class="form-group" for="txtId">
+            <input  [disabled]="manuallySelected" name="txtgmail" [(ngModel)]="selectedFeedBack.gmail"  id="txtId" class="form-control"  placeholder="Gmail" required>
+          </div> -->
+          <div class="form-group" for="txtName">
+            <input #nameRef="ngModel" maxlength="10" minlength="4" [disabled]="manuallySelected" name="txtName" [(ngModel)]="selectedFeedBack.customerName" id="txtName" ngmodel class="form-control"   placeholder="Youer Name" required >
+            <div *ngIf="nameRef.errors && (nameRef.dirty || nameRef.touched)" class="alert alert-danger">
+                <div [hidden]="!nameRef.errors.required">Please Enter a Name</div>
+                <div [hidden]="!nameRef.errors.minlength">Please Enter Atleast 4 Characters</div>
+            </div>
+          </div>
+          <div class="form-group">
+            <input #refpincode="ngModel" pattern="^[0-9][0-9]{9}$" name="txtTeleponeNo" ngmodel [(ngModel)]="selectedFeedBack.teleponeNo" id="txtteleponeNo" class="form-control"  placeholder="Mobile Number" >
+            <div *ngIf="refpincode.errors && (refpincode.dirty || refpincode.touched)" class="alert alert-danger">
+                <div [hidden]="!refpincode.errors.pattern">Please Enter Ten Digit Number</div>
+            </div>
+          </div>
+          <!--<div class="form-group">-->
+            <!--<input name="txtuverFeedBack" [(ngModel)]="selectedFeedBack.uverFeedBack" id="txtuverFeedBack"  class="form-control"  placeholder="Subject" required>-->
+          <!--</div>-->
+          <div class="form-group">
+            <textarea  name="txtsuggesant" [(ngModel)]="selectedFeedBack.suggesant"  id="txtsuggesant" class="form-control" type="textarea" id="message" placeholder="Message" maxlength="100" rows="7"></textarea>
+            <span class="help-block"><p id="characterLeft" class="help-block ">You have reached the limit</p></span>
+          </div>
+            <div>
+          <button [disabled]="!frmFeedBack.form.valid" type="submit"  class="btn btn-primary pull-right">Submit Form</button>
+              &nbsp;
+              <button (click)="clear()" type="button" class="btn btn-warning">Clear</button>
+            </div>
+        </form>
+<br>
+<br>
+<div class="container">
+    <div class="row">
+          <div class="col-sm-5 col-sm-offset- -1">
+              <div id="imaginary_container">
+                  <div class="input-group stylish-input-group">
+                      <input type="text" class="form-control"  placeholder="Search" >
+                      <span class="input-group-addon">
+                          <button type="submit">
+                              <span class="glyphicon glyphicon-search"></span>
+                          </button>
+                      </span>
+                  </div>
+              </div>
+          </div>
+    </div>
+  </div>
+
+<br>
+<br>
+
+        <div class="card">
+            <div class="card-body">
+                <div id="table" class="table-editable">
+
+                  <table class="table table-bordered table-responsive-md table-striped text-center">
+                    <tr>
+                      <th class="text-center">Fid</th>
+                      <th class="text-center">Gmail</th>
+                      <th class="text-center">Customer Name</th>
+                      <th class="text-center">Telepone No</th>
+                      <th class="text-center">Suggestion</th>
+                      <th class="text-center">Feed Back</th>
+                      <th class="text-center">Date</th>
+                      <th class="text-center">Remove</th>
+                    </tr>
+
+                    <tbody>
+                    <!--(click)="SelectedOrders(orders)" [class.selected]="orders==selectedOrders"-->
+                    <tr *ngFor="let feedbacks  of feddback | paginate: { itemsPerPage: 2, currentPage: p }"
+                       >
+                      <td>{{feedbacks.fid}}</td>
+                      <td>{{feedbacks.gmail}}</td>
+                      <td>{{feedbacks.customerName }}</td>
+                      <td>{{feedbacks.teleponeNo }}</td>
+                      <td>{{feedbacks.uverFeedBack }}</td>
+                      <td>{{feedbacks.suggesant }}</td>
+                      <td>{{datepipe.transform(feedbacks.date, 'yyyy-MM-d')}}</td>
+
+                      <td>
+                        <!--<i (click)="deleteItem(orders)"  class="btn btn-danger btn-rounded btn-sm my-0" aria-hidden="true"></i>-->
+                        <i (click)="deleteFeedback(feedbacks)" class="fa fa-trash fa-2x"></i>
+                      </td>
+                    </tr>
+                    </tbody>
+
+                  </table>
+
+                  <tfoot>
+                      <tr>
+                        <td colspan="4">
+                          <pagination-controls (pageChange)="p = $event"></pagination-controls>
+                        </td>
+                      </tr>
+                      </tfoot>
+
+                </div>
+            </div>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+
+

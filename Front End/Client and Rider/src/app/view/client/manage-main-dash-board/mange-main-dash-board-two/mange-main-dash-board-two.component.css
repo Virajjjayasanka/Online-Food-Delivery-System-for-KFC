@@ -1,0 +1,194 @@
+.box > .icon { text-align: center; position: relative; }
+.box > .icon > .image { position: relative; z-index: 2; margin: auto; width: 88px; height: 88px; border: 8px solid white; line-height: 88px; border-radius: 50%; background: #63B76C; vertical-align: middle; }
+.box > .icon:hover > .image { background: #333; }
+.box > .icon > .image > i { font-size: 36px !important; color: #fff !important; }
+.box > .icon:hover > .image > i { color: white !important; }
+.box > .icon > .info { margin-top: -24px; background: rgba(0, 0, 0, 0.04); border: 1px solid #e0e0e0; padding: 15px 0 10px 0; }
+.box > .icon:hover > .info { background: rgba(0, 0, 0, 0.04); border-color: #e0e0e0; color: white; }
+.box > .icon > .info > h3.title { font-family: "Roboto",sans-serif !important; font-size: 16px; color: #222; font-weight: 500; }
+.box > .icon > .info > p { font-family: "Roboto",sans-serif !important; font-size: 13px; color: #666; line-height: 1.5em; margin: 20px;}
+.box > .icon:hover > .info > h3.title, .box > .icon:hover > .info > p, .box > .icon:hover > .info > .more > a { color: #222; }
+.box > .icon > .info > .more a { font-family: "Roboto",sans-serif !important; font-size: 12px; color: #222; line-height: 12px; text-transform: uppercase; text-decoration: none; }
+.box > .icon:hover > .info > .more > a { color: #fff; padding: 6px 8px; background-color: #63B76C; }
+.box .space { height: 30px; }
+
+
+
+.dynamicTile .col-sm-2.col-xs-4{
+    padding:5px;
+}
+
+.dynamicTile .col-sm-4.col-xs-8{
+    padding:5px;
+}
+
+#tile1{
+    background: rgb(0,172,238);
+}
+
+#tile2{
+    background: rgb(243,243,243);
+}
+
+#tile3{
+    background: rgb(71,193,228);
+}
+
+#tile4{
+    background-image: url('http://handsontek.net/demoimages/tiles/facebook.png');
+    background-size: cover;
+}
+
+#tile5{
+    background: rgb(175,26,63);
+}
+
+#tile6{
+    background: rgb(62,157,215);
+}
+
+#tile7{
+    background: white;
+}
+
+#tile8{
+    background: rgb(209,70,37);
+}
+
+#tile9{
+    background: rgb(0,142,0);
+}
+
+#tile10{
+    background: rgb(0,93,233);
+}
+
+.tilecaption{
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%); 
+    margin:0!important;
+    text-align: center;
+    color:white;
+    font-family: Segoe UI;
+    font-weight: lighter;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#thumbnail-preview-indicators {
+    position: relative;
+    overflow: hidden;
+  }
+  #thumbnail-preview-indicators .slides .slide-1, 
+  #thumbnail-preview-indicators .slides .slide-2,
+  #thumbnail-preview-indicators .slides .slide-3 {
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+  }
+      #thumbnail-preview-indicators,
+      #thumbnail-preview-indicators .slides,
+      #thumbnail-preview-indicators .slides .slide-1, 
+      #thumbnail-preview-indicators .slides .slide-2,
+      #thumbnail-preview-indicators .slides .slide-3 {
+        height: 480px;
+      }
+  #thumbnail-preview-indicators .slides .slide-1 {
+    background-image: url(https://s3.amazonaws.com/ooomf-com-files/wdXqHcTwSTmLuKOGz92L_Landscape.jpg); 
+  }
+  #thumbnail-preview-indicators .slides .slide-2 {
+    background-image: url(https://s3.amazonaws.com/ooomf-com-files/tU3ptNgGSP6U2fE67Gvy_SYDNEY-162.jpg);
+  }
+  #thumbnail-preview-indicators .slides .slide-3 {
+    background-image: url(https://s3.amazonaws.com/ooomf-com-files/mtNrf7oxS4uSxTzMBWfQ_DSC_0043.jpg);
+  }
+  #thumbnail-preview-indicators .carousel-inner .item .carousel-caption {
+    top: 20%;
+    bottom: inherit;
+  }
+  #thumbnail-preview-indicators .carousel-indicators li,
+  #thumbnail-preview-indicators .carousel-indicators li.active {
+    position: relative;
+    width: 100px;
+    height: 8px;  
+  }
+  #thumbnail-preview-indicators .carousel-indicators li > .thumbnail {
+    position: absolute;
+    top: 0;
+    width: 100px;
+    display: none;
+    opacity: 0;
+    left: 50%;
+    margin-top: -80px;
+    margin-left: -50px;
+  }
+  #thumbnail-preview-indicators .carousel-indicators li:hover > .thumbnail,
+  #thumbnail-preview-indicators .carousel-indicators li.active > .thumbnail {
+    display: block;
+    opacity: .8;
+  }
+  #thumbnail-preview-indicators .carousel-indicators li.active > .thumbnail:hover{
+    opacity: 1;
+  }
+  @media screen and (max-width : 480px) {    
+      #thumbnail-preview-indicators .carousel-indicators li,
+      #thumbnail-preview-indicators .carousel-indicators li.active {
+        width: 50px;
+        height: 8px;
+        position: relative;
+      }
+      #thumbnail-preview-indicators .carousel-indicators li > .thumbnail {
+         width: 50px;
+         left: 50%;
+         margin-top: -50px;
+         margin-left: -25px;
+      }
+  }
+
+
+
+
+
+
+
+  .how-section1{
+    margin-top:-15%;
+    padding: 10%;
+}
+.how-section1 h4{
+    color: #ffa500;
+    font-weight: bold;
+    font-size: 30px;
+}
+.how-section1 .subheading{
+    color: #3931af;
+    font-size: 20px;
+}
+.how-section1 .row
+{
+    margin-top: 10%;
+}
+.how-img 
+{
+    text-align: center;
+}
+.how-img img{
+    width: 40%;
+}

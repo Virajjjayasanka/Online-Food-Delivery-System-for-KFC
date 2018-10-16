@@ -1,0 +1,1337 @@
+
+<nav class="navbar navbar-default navbar-inverse navbar-fixed-top " role="navigation ">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">Login dropdown</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Rider Login <span class="caret"></span></a>
+          <ul id="login-dp" class="dropdown-menu">
+            <li>VJ Delivery Wokers  Only use
+              <div class="row">
+                <div class="col-md-12">
+                  <form  action="" method="post"
+                     class="form" role="form" method="post" action="login" accept-charset="UTF-8" id="login-nav">
+                    <div class="form-group">
+                      <label class="sr-only" for="exampleInputEmail2">Email address</label>
+                      <input [(ngModel)]="selectRider.username" #username="ngModel" name="txtUserName" type="email" type="text" class="form-control" id="exampleInputEmail2" placeholder="Email address" required>
+                    </div>
+                    <div class="form-group">
+                      <label class="sr-only" for="exampleInputPassword2">Password</label>
+                      <input [(ngModel)]="selectRider.password"  name="txtPassword"  type="password" class="form-control" id="exampleInputPassword2" placeholder="Password" required>
+                      <div class="help-block text-right"><a href="">Forget the password ?</a></div>
+                    </div>
+                    <div class="form-group">
+                      <button (click) ="loginRider()" type="submit" class="btn btn-primary btn-block" >Sign in</button>
+                    </div>
+                    <div class="checkbox">
+                      <label>
+                        <input type="checkbox"> keep me logged-in
+                      </label>
+                    </div>
+                  </form>
+
+                  <div *ngIf="failed" class="alert alert-danger alert-dismissible" style="margin-top:10px;">
+                    <h6><i class="icon fa fa-ban"></i> Invalid Login Credentials !</h6>
+                    Please enter valid login credentials to login
+                  </div>
+
+                </div>
+              
+              </div>
+            </li>
+          </ul>
+
+
+
+        </li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><p class="navbar-text">Already have an account?</p></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b>Login</b> <span class="caret"></span></a>
+          <ul id="login-dp" class="dropdown-menu">
+            <li>
+              <div class="row">
+                <div class="col-md-12">
+                  Login via
+                  <div class="social-buttons">
+                    <a href="#" class="btn btn-fb"><i class="fa fa-facebook"></i> Facebook</a>
+                    <a href="#" class="btn btn-tw"><i class="fa fa-twitter"></i> Twitter</a>
+                  </div>
+                  or
+                  <form #frmLogin="ngForm" action="" method="post"
+                        (ngSubmit)="login()"    class="form" role="form" method="post" action="login" accept-charset="UTF-8" id="login-nav">
+                    <div class="form-group">
+                      <label class="sr-only" for="exampleInputEmail2">Email address</label>
+                      <input [(ngModel)]="selectedcustomer.email" #username="ngModel" name="txtUserName" type="email" type="text" class="form-control" id="exampleInputEmail2" placeholder="Email address" required>
+                    </div>
+                    <div class="form-group">
+                      <label class="sr-only" for="exampleInputPassword2">Password</label>
+                      <input [(ngModel)]="selectedcustomer.password"  name="txtPassword"  type="password" class="form-control" id="exampleInputPassword2" placeholder="Password" required>
+                      <div class="help-block text-right"><a href="">Forget the password ?</a></div>
+                    </div>
+                    <div class="form-group">
+                      <button type="submit" class="btn btn-primary btn-block" >Sign in</button>
+                    </div>
+                    <div class="checkbox">
+                      <label>
+                        <input type="checkbox"> keep me logged-in
+                      </label>
+                    </div>
+                  </form>
+
+                  <div *ngIf="failed2" class="alert alert-danger alert-dismissible" style="margin-top:10px;">
+                    <h6><i class="icon fa fa-ban"></i> Invalid Login Credentials !</h6>
+                    Please enter valid login credentials to login
+                  </div>
+
+                </div>
+                <div class="bottom text-center">
+                  New here ? <a href="#"><b>Join Us</b></a>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+<br>
+<br>
+
+<div class="view hm-white-light jarallax" data-jarallax='{"speed": 0.2}' data-jarallax-video="https://www.youtube.com/watch?v=FpVgNOujFl4">
+  <div class="full-bg-img">
+    <div class="container flex-center">
+      <div class="row">
+        <div class="col-md-12 wow fadeIn">
+          <div class="text-center text-danger"class="mu-title">
+            <h1 class="display-2 mb-2 wow fadeInDown" class="mu-subtitle" data-wow-delay="0.3s" style="color: black">VJ+ DILIVERY</h1><br>
+            <h5 class="font-up mb-3 mt-1 font-bold wow fadeInDown" data-wow-delay="0.4s" style="font-size: 20px;font-style: oblique;color: #3b5998">freshly prepared and Finger Lickin<br>Hand-breaded,<b>Good! A taste</b> you can trust!<b> Vj Delivery</b></h5>
+            <!-- <a class="btn btn-primary btn-lg wow fadeInDown" data-wow-delay="0.4s"><i class="fa fa-shield"style="font-size: 20px"></i> Sing Up</a> -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<h1 class="text-center" style="color: black">WHAT MADE US GREAT IS STILL WHAT MAKES US GREAT</h1>
+
+
+<div class="container">
+  <div class="row">
+
+    <!--team-1-->
+    <div class="col-lg-4">
+      <div class="our-team-main">
+
+        <div class="team-front">
+          <img style="width: 110px;height: 110px;"  src="../../../assets/images/img/chef/chef-3.jpg" class="img-fluid" />
+          <h3>Dilip Kevat</h3>
+          <p>Web Designer</p>
+        </div>
+
+        <div class="team-back">
+	<span>
+      Chefs and head cooks use a variety of kitchen and cooking equipment, including step-in coolers, high-quality knives, meat slicers, and grinders. They also have access to large quantities of meats, spices, and produce. Some chefs use scheduling and purchasing software to help them in their administrative tasks.
+	</span>
+        </div>
+
+      </div>
+    </div>
+    <!--team-1-->
+
+    <!--team-2-->
+    <div class="col-lg-4">
+      <div class="our-team-main">
+
+        <div class="team-front">
+          <img style="width: 110px;height: 110px;"  src="../../../assets/images/img/chef/chef-5.jpg" class="img-fluid" />
+          <h3>Dilip Kevat</h3>
+          <p>Web Designer</p>
+        </div>
+
+        <div class="team-back">
+	<span>
+      Sous chefs are a kitchen’s second-in-command. They supervise the restaurant’s cooks, prepare meals, and report results to the head chefs. In the absence of the head chef, sous chefs run the kitchen
+	</span>
+        </div>
+
+      </div>
+    </div>
+    <!--team-2-->
+
+    <!--team-3-->
+    <div class="col-lg-4">
+      <div class="our-team-main">
+
+        <div class="team-front">
+          <img style="width: 110px;height: 110px;"  src="../../../assets/images/img/chef/chef-4.jpg" class="img-fluid" />
+          <h3>Dilip Kevat</h3>
+          <p>Web Designer</p>
+        </div>
+
+        <div class="team-back">
+	<span>
+      Private household chefs typically work full time for one client, such as a corporate executive, university president, or diplomat, who regularly entertains as part of his or her official duties.
+	</span>
+        </div>
+
+      </div>
+    </div>
+    <!--team-3-->
+
+    <!--team-4-->
+    <div class="col-lg-4">
+      <div class="our-team-main">
+
+        <div class="team-front">
+          <img style="width: 110px;height: 110px;"  src="../../../assets/images/img/chef/chef-2.jpg" class="img-fluid" />
+          <h3>Dilip Kevat</h3>
+          <p>Web Designer</p>
+        </div>
+
+        <div class="team-back">
+	<span>
+      Chefs and head cooks work in restaurants, hotels, private households, and other food service establishments. All of the cooking and food preparation areas in these facilities must be kept clean and sanitary. Chefs and head cooks usually stand for long periods and work in a fast-paced environment
+	</span>
+        </div>
+
+
+
+
+      </div>
+    </div>
+    <!--team-4-->
+
+    <!--team-5-->
+    <div class="col-lg-4">
+      <div class="our-team-main">
+
+        <div class="team-front">
+          <img style="width: 110px;height: 110px;" src="../../../assets/images/img/chef/chef-1.jpg" class="img-fluid" />
+          <h3>Dilip Kevat</h3>
+          <p>Web Designer</p>
+        </div>
+
+        <div class="team-back">
+	<span>
+      Some self-employed chefs run their own restaurants or catering businesses and their work can be more stressful. For example, outside the kitchen, they often spend many hours managing all aspects of the business to ensure that bills and salaries are paid and that the business is profitable.
+	</span>
+        </div>
+
+      </div>
+    </div>
+    <!--team-5-->
+
+    <!--team-6-->
+    <div class="col-lg-4">
+      <div class="our-team-main">
+
+        <div class="team-front">
+          <img style="width: 110px;height: 110px;" src="../../../assets/images/img/chef/chef-3.jpg" class="img-fluid" />
+          <h3>Dilip Kevat</h3>
+          <p>Web Designer</p>
+        </div>
+
+        <div class="team-back">
+	<span>
+      Kitchens are usually crowded and filled with dangerous objects and areas, such as hot ovens and slippery floors. As a result, chefs and head cooks have one of the highest rates of injuries and illnesses of all occupations. The most common hazards include slips, falls, cuts, and burns but seldom cause serious injuries. To reduce these risks, workers often wear long-sleeve shirts and nonslip shoes.
+	</span>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+
+</div>
+
+
+
+<section id="mu-counter">
+  <div class="mu-counter-overlay">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="mu-counter-area">
+
+            <ul class="mu-counter-nav">
+
+              <li class="col-md-3 col-sm-3 col-xs-12">
+                <div class="mu-single-counter">
+                  <span>Fresh</span>
+                  <h3><span class="counter-value" data-count="150">0</span><sup>+</sup></h3>
+                  <p>Breakfast Items</p>
+                </div>
+              </li>
+
+              <li class="col-md-3 col-sm-3 col-xs-12">
+                <div class="mu-single-counter">
+                  <span>Delicious</span>
+                  <h3><span class="counter-value" data-count="60">0</span><sup>+</sup></h3>
+                  <p>Lunch Items</p>
+                </div>
+              </li>
+
+               <li class="col-md-3 col-sm-3 col-xs-12">
+                <div class="mu-single-counter">
+                  <span>Hot</span>
+                   <h3><span class="counter-value" data-count="45">0</span><sup>+</sup></h3>
+                  <p>Coffee Items</p>
+                </div>
+              </li>
+
+               <li class="col-md-3 col-sm-3 col-xs-12">
+                <div class="mu-single-counter">
+                  <span>Satisfied</span>
+                  <h3><span class="counter-value" data-count="6560">0</span><sup>+</sup></h3>
+                  <p>Customers</p>
+                </div>
+              </li>
+
+            </ul>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section id="mu-restaurant-menu">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="mu-restaurant-menu-area">
+
+          <div class="mu-title">
+            <span class="mu-subtitle">Discover</span>
+            <h2>OUR MENU</h2>
+          </div>
+
+          <div class="mu-restaurant-menu-content">
+            <ul class="nav nav-tabs mu-restaurant-menu">
+              <li class="active"><a href="#breakfast" data-toggle="tab">Breakfast</a></li>
+              <li><a href="#meals" data-toggle="tab">Meals</a></li>
+              <li><a href="#snacks" data-toggle="tab">Snacks</a></li>
+              <li><a href="#desserts" data-toggle="tab">Desserts</a></li>
+              <li><a href="#drinks" data-toggle="tab">Drinks</a></li>
+            </ul>
+
+            <!-- Tab panes -->
+            <div class="tab-content">
+              <div class="tab-pane fade in active" id="breakfast">
+                <div class="mu-tab-content-area">
+                  <div class="row">
+
+                    <div class="col-md-6">
+                      <div class="mu-tab-content-left">
+                        <ul class="mu-menu-item-nav">
+                          <li>
+                            <div class="media">
+                              <div class="media-left">
+                                <a href="#">
+                                  <img class="media-object" src="../../../assets/images/img/menu/item-1.jpg" alt="img">
+                                </a>
+                              </div>
+                              <div class="media-body">
+                                <h4 class="media-heading"><a href="#">English Breakfast</a></h4>
+                                <span class="mu-menu-price">$15.85</span>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere nulla aliquid praesentium dolorem commodi illo.</p>
+                              </div>
+                            </div>
+                          </li>
+                           <li>
+                            <div class="media">
+                              <div class="media-left">
+                                <a href="#">
+                                  <img class="media-object" src="../../../assets/images/img/menu/item-2.jpg" alt="img">
+                                </a>
+                              </div>
+                              <div class="media-body">
+                                <h4 class="media-heading"><a href="#">Chines Breakfast</a></h4>
+                                <span class="mu-menu-price">$11.95</span>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere nulla aliquid praesentium dolorem commodi illo.</p>
+                              </div>
+                            </div>
+                          </li>
+                           <li>
+                            <div class="media">
+                              <div class="media-left">
+                                <a href="#">
+                                  <img class="media-object" src="../../../assets/images/img/menu/item-1.jpg" alt="img">
+                                </a>
+                              </div>
+                              <div class="media-body">
+                                <h4 class="media-heading"><a href="#">Indian Breakfast</a></h4>
+                                <span class="mu-menu-price">$15.85</span>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere nulla aliquid praesentium dolorem commodi illo.</p>
+                              </div>
+                            </div>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+
+                   <div class="col-md-6">
+                     <div class="mu-tab-content-right">
+                        <ul class="mu-menu-item-nav">
+                          <li>
+                            <div class="media">
+                              <div class="media-left">
+                                <a href="#">
+                                  <img class="media-object" src="../../../assets/images/img/menu/item-1.jpg" alt="img">
+                                </a>
+                              </div>
+                              <div class="media-body">
+                                <h4 class="media-heading"><a href="#">English Breakfast</a></h4>
+                                <span class="mu-menu-price">$15.85</span>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere nulla aliquid praesentium dolorem commodi illo.</p>
+                              </div>
+                            </div>
+                          </li>
+                           <li>
+                            <div class="media">
+                              <div class="media-left">
+                                <a href="#">
+                                  <img class="media-object" src="../../../assets/images/img/menu/item-2.jpg" alt="img">
+                                </a>
+                              </div>
+                              <div class="media-body">
+                                <h4 class="media-heading"><a href="#">Chines Breakfast</a></h4>
+                                <span class="mu-menu-price">$11.95</span>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere nulla aliquid praesentium dolorem commodi illo.</p>
+                              </div>
+                            </div>
+                          </li>
+                           <li>
+                            <div class="media">
+                              <div class="media-left">
+                                <a href="#">
+                                  <img class="media-object" src="../../../assets/images/img/menu/item-1.jpg" alt="img">
+                                </a>
+                              </div>
+                              <div class="media-body">
+                                <h4 class="media-heading"><a href="#">Indian Breakfast</a></h4>
+                                <span class="mu-menu-price">$15.85</span>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere nulla aliquid praesentium dolorem commodi illo.</p>
+                              </div>
+                            </div>
+                          </li>
+                        </ul>
+                     </div>
+                   </div>
+
+                 </div>
+               </div>
+              </div>
+
+              <div class="tab-pane fade" id="meals">
+                <div class="mu-tab-content-area">
+                  <div class="row">
+
+                    <div class="col-md-6">
+                      <div class="mu-tab-content-left">
+                        <ul class="mu-menu-item-nav">
+                          <li>
+                            <div class="media">
+                              <div class="media-left">
+                                <a href="#">
+                                  <img class="media-object" src="../../../assets/images/img/menu/item-3.jpg" alt="img">
+                                </a>
+                              </div>
+                              <div class="media-body">
+                                <h4 class="media-heading"><a href="#">English Breakfast</a></h4>
+                                <span class="mu-menu-price">$15.85</span>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere nulla aliquid praesentium dolorem commodi illo.</p>
+                              </div>
+                            </div>
+                          </li>
+                           <li>
+                            <div class="media">
+                              <div class="media-left">
+                                <a href="#">
+                                  <img class="media-object" src="../../../assets/images/img/menu/item-4.jpg" alt="img">
+                                </a>
+                              </div>
+                              <div class="media-body">
+                                <h4 class="media-heading"><a href="#">Chines Breakfast</a></h4>
+                                <span class="mu-menu-price">$11.95</span>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere nulla aliquid praesentium dolorem commodi illo.</p>
+                              </div>
+                            </div>
+                          </li>
+                           <li>
+                            <div class="media">
+                              <div class="media-left">
+                                <a href="#">
+                                  <img class="media-object" src="../../../assets/images/img/menu/item-3.jpg" alt="img">
+                                </a>
+                              </div>
+                              <div class="media-body">
+                                <h4 class="media-heading"><a href="#">Indian Breakfast</a></h4>
+                                <span class="mu-menu-price">$15.85</span>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere nulla aliquid praesentium dolorem commodi illo.</p>
+                              </div>
+                            </div>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+
+                   <div class="col-md-6">
+                     <div class="mu-tab-content-right">
+                        <ul class="mu-menu-item-nav">
+                          <li>
+                            <div class="media">
+                              <div class="media-left">
+                                <a href="#">
+                                  <img class="media-object" src="../../../assets/images/img/menu/item-4.jpg" alt="img">
+                                </a>
+                              </div>
+                              <div class="media-body">
+                                <h4 class="media-heading"><a href="#">English Breakfast</a></h4>
+                                <span class="mu-menu-price">$15.85</span>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere nulla aliquid praesentium dolorem commodi illo.</p>
+                              </div>
+                            </div>
+                          </li>
+                           <li>
+                            <div class="media">
+                              <div class="media-left">
+                                <a href="#">
+                                  <img class="media-object" src="../../../assets/images/img/menu/item-3.jpg" alt="img">
+                                </a>
+                              </div>
+                              <div class="media-body">
+                                <h4 class="media-heading"><a href="#">Chines Breakfast</a></h4>
+                                <span class="mu-menu-price">$11.95</span>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere nulla aliquid praesentium dolorem commodi illo.</p>
+                              </div>
+                            </div>
+                          </li>
+                           <li>
+                            <div class="media">
+                              <div class="media-left">
+                                <a href="#">
+                                  <img class="media-object" src="../../../assets/images/img/menu/item-4.jpg" alt="img">
+                                </a>
+                              </div>
+                              <div class="media-body">
+                                <h4 class="media-heading"><a href="#">Indian Breakfast</a></h4>
+                                <span class="mu-menu-price">$15.85</span>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere nulla aliquid praesentium dolorem commodi illo.</p>
+                              </div>
+                            </div>
+                          </li>
+                        </ul>
+                     </div>
+                   </div>
+
+                 </div>
+               </div>
+              </div>
+
+              <div class="tab-pane fade" id="snacks">
+                <div class="mu-tab-content-area">
+                  <div class="row">
+
+                    <div class="col-md-6">
+                      <div class="mu-tab-content-left">
+                        <ul class="mu-menu-item-nav">
+                          <li>
+                            <div class="media">
+                              <div class="media-left">
+                                <a href="#">
+                                  <img class="media-object" src="../../../assets/images/img/menu/item-5.jpg" alt="img">
+                                </a>
+                              </div>
+                              <div class="media-body">
+                                <h4 class="media-heading"><a href="#">English Breakfast</a></h4>
+                                <span class="mu-menu-price">$15.85</span>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere nulla aliquid praesentium dolorem commodi illo.</p>
+                              </div>
+                            </div>
+                          </li>
+                           <li>
+                            <div class="media">
+                              <div class="media-left">
+                                <a href="#">
+                                  <img class="media-object" src="../../../assets/images/img/menu/item-6.jpg" alt="img">
+                                </a>
+                              </div>
+                              <div class="media-body">
+                                <h4 class="media-heading"><a href="#">Chines Breakfast</a></h4>
+                                <span class="mu-menu-price">$11.95</span>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere nulla aliquid praesentium dolorem commodi illo.</p>
+                              </div>
+                            </div>
+                          </li>
+                           <li>
+                            <div class="media">
+                              <div class="media-left">
+                                <a href="#">
+                                  <img class="media-object" src="../../../assets/images/img/menu/item-5.jpg" alt="img">
+                                </a>
+                              </div>
+                              <div class="media-body">
+                                <h4 class="media-heading"><a href="#">Indian Breakfast</a></h4>
+                                <span class="mu-menu-price">$15.85</span>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere nulla aliquid praesentium dolorem commodi illo.</p>
+                              </div>
+                            </div>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+
+                   <div class="col-md-6">
+                     <div class="mu-tab-content-right">
+                        <ul class="mu-menu-item-nav">
+                          <li>
+                            <div class="media">
+                              <div class="media-left">
+                                <a href="#">
+                                  <img class="media-object" src="../../../assets/images/img/menu/item-5.jpg" alt="img">
+                                </a>
+                              </div>
+                              <div class="media-body">
+                                <h4 class="media-heading"><a href="#">English Breakfast</a></h4>
+                                <span class="mu-menu-price">$15.85</span>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere nulla aliquid praesentium dolorem commodi illo.</p>
+                              </div>
+                            </div>
+                          </li>
+                           <li>
+                            <div class="media">
+                              <div class="media-left">
+                                <a href="#">
+                                  <img class="media-object" src="../../../assets/images/img/menu/item-6.jpg" alt="img">
+                                </a>
+                              </div>
+                              <div class="media-body">
+                                <h4 class="media-heading"><a href="#">Chines Breakfast</a></h4>
+                                <span class="mu-menu-price">$11.95</span>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere nulla aliquid praesentium dolorem commodi illo.</p>
+                              </div>
+                            </div>
+                          </li>
+                           <li>
+                            <div class="media">
+                              <div class="media-left">
+                                <a href="#">
+                                  <img class="media-object" src="../../../assets/images/img/menu/item-5.jpg" alt="img">
+                                </a>
+                              </div>
+                              <div class="media-body">
+                                <h4 class="media-heading"><a href="#">Indian Breakfast</a></h4>
+                                <span class="mu-menu-price">$15.85</span>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere nulla aliquid praesentium dolorem commodi illo.</p>
+                              </div>
+                            </div>
+                          </li>
+                        </ul>
+                     </div>
+                   </div>
+
+                 </div>
+               </div>
+              </div>
+
+              <div class="tab-pane fade" id="desserts">
+                <div class="mu-tab-content-area">
+                  <div class="row">
+
+                    <div class="col-md-6">
+                      <div class="mu-tab-content-left">
+                        <ul class="mu-menu-item-nav">
+                          <li>
+                            <div class="media">
+                              <div class="media-left">
+                                <a href="#">
+                                  <img class="media-object" src="../../../assets/images/img/menu/item-7.jpg" alt="img">
+                                </a>
+                              </div>
+                              <div class="media-body">
+                                <h4 class="media-heading"><a href="#">English Breakfast</a></h4>
+                                <span class="mu-menu-price">$15.85</span>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere nulla aliquid praesentium dolorem commodi illo.</p>
+                              </div>
+                            </div>
+                          </li>
+                           <li>
+                            <div class="media">
+                              <div class="media-left">
+                                <a href="#">
+                                  <img class="media-object" src="../../../assets/images/img/menu/item-8.jpg" alt="img">
+                                </a>
+                              </div>
+                              <div class="media-body">
+                                <h4 class="media-heading"><a href="#">Chines Breakfast</a></h4>
+                                <span class="mu-menu-price">$11.95</span>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere nulla aliquid praesentium dolorem commodi illo.</p>
+                              </div>
+                            </div>
+                          </li>
+                           <li>
+                            <div class="media">
+                              <div class="media-left">
+                                <a href="#">
+                                  <img class="media-object" src="../../../assets/images/img/menu/item-7.jpg" alt="img">
+                                </a>
+                              </div>
+                              <div class="media-body">
+                                <h4 class="media-heading"><a href="#">Indian Breakfast</a></h4>
+                                <span class="mu-menu-price">$15.85</span>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere nulla aliquid praesentium dolorem commodi illo.</p>
+                              </div>
+                            </div>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+
+                   <div class="col-md-6">
+                     <div class="mu-tab-content-right">
+                        <ul class="mu-menu-item-nav">
+                          <li>
+                            <div class="media">
+                              <div class="media-left">
+                                <a href="#">
+                                  <img class="media-object" src="../../../assets/images/img/menu/item-8.jpg" alt="img">
+                                </a>
+                              </div>
+                              <div class="media-body">
+                                <h4 class="media-heading"><a href="#">English Breakfast</a></h4>
+                                <span class="mu-menu-price">$15.85</span>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere nulla aliquid praesentium dolorem commodi illo.</p>
+                              </div>
+                            </div>
+                          </li>
+                           <li>
+                            <div class="media">
+                              <div class="media-left">
+                                <a href="#">
+                                  <img class="media-object" src="../../../assets/images/img/menu/item-7.jpg" alt="img">
+                                </a>
+                              </div>
+                              <div class="media-body">
+                                <h4 class="media-heading"><a href="#">Chines Breakfast</a></h4>
+                                <span class="mu-menu-price">$11.95</span>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere nulla aliquid praesentium dolorem commodi illo.</p>
+                              </div>
+                            </div>
+                          </li>
+                           <li>
+                            <div class="media">
+                              <div class="media-left">
+                                <a href="#">
+                                  <img class="media-object" src="../../../assets/images/img/menu/item-8.jpg" alt="img">
+                                </a>
+                              </div>
+                              <div class="media-body">
+                                <h4 class="media-heading"><a href="#">Indian Breakfast</a></h4>
+                                <span class="mu-menu-price">$15.85</span>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere nulla aliquid praesentium dolorem commodi illo.</p>
+                              </div>
+                            </div>
+                          </li>
+                        </ul>
+                     </div>
+                   </div>
+
+                 </div>
+               </div>
+              </div>
+
+              <div class="tab-pane fade" id="drinks">
+                <div class="mu-tab-content-area">
+                  <div class="row">
+
+                    <div class="col-md-6">
+                      <div class="mu-tab-content-left">
+                        <ul class="mu-menu-item-nav">
+                          <li>
+                            <div class="media">
+                              <div class="media-left">
+                                <a href="#">
+                                  <img class="media-object" src="../../../assets/images/img/menu/item-9.jpg" alt="img">
+                                </a>
+                              </div>
+                              <div class="media-body">
+                                <h4 class="media-heading"><a href="#">English Breakfast</a></h4>
+                                <span class="mu-menu-price">$15.85</span>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere nulla aliquid praesentium dolorem commodi illo.</p>
+                              </div>
+                            </div>
+                          </li>
+                           <li>
+                            <div class="media">
+                              <div class="media-left">
+                                <a href="#">
+                                  <img class="media-object" src="../../../assets/images/img/menu/item-10.jpg" alt="img">
+                                </a>
+                              </div>
+                              <div class="media-body">
+                                <h4 class="media-heading"><a href="#">Chines Breakfast</a></h4>
+                                <span class="mu-menu-price">$11.95</span>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere nulla aliquid praesentium dolorem commodi illo.</p>
+                              </div>
+                            </div>
+                          </li>
+                           <li>
+                            <div class="media">
+                              <div class="media-left">
+                                <a href="#">
+                                  <img class="media-object" src="../../../assets/images/img/menu/item-9.jpg" alt="img">
+                                </a>
+                              </div>
+                              <div class="media-body">
+                                <h4 class="media-heading"><a href="#">Indian Breakfast</a></h4>
+                                <span class="mu-menu-price">$15.85</span>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere nulla aliquid praesentium dolorem commodi illo.</p>
+                              </div>
+                            </div>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+
+                   <div class="col-md-6">
+                     <div class="mu-tab-content-right">
+                        <ul class="mu-menu-item-nav">
+                          <li>
+                            <div class="media">
+                              <div class="media-left">
+                                <a href="#">
+                                  <img class="media-object" src="../../../assets/images/img/menu/item-9.jpg" alt="img">
+                                </a>
+                              </div>
+                              <div class="media-body">
+                                <h4 class="media-heading"><a href="#">English Breakfast</a></h4>
+                                <span class="mu-menu-price">$15.85</span>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere nulla aliquid praesentium dolorem commodi illo.</p>
+                              </div>
+                            </div>
+                          </li>
+                           <li>
+                            <div class="media">
+                              <div class="media-left">
+                                <a href="#">
+                                  <img class="media-object" src="../../../assets/images/img/menu/item-10.jpg" alt="img">
+                                </a>
+                              </div>
+                              <div class="media-body">
+                                <h4 class="media-heading"><a href="#">Chines Breakfast</a></h4>
+                                <span class="mu-menu-price">$11.95</span>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere nulla aliquid praesentium dolorem commodi illo.</p>
+                              </div>
+                            </div>
+                          </li>
+                           <li>
+                            <div class="media">
+                              <div class="media-left">
+                                <a href="#">
+                                  <img class="media-object" src="../../../assets/images/img/menu/item-9.jpg" alt="img">
+                                </a>
+                              </div>
+                              <div class="media-body">
+                                <h4 class="media-heading"><a href="#">Indian Breakfast</a></h4>
+                                <span class="mu-menu-price">$15.85</span>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere nulla aliquid praesentium dolorem commodi illo.</p>
+                              </div>
+                            </div>
+                          </li>
+                        </ul>
+                     </div>
+                   </div>
+
+                 </div>
+               </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<section id="mu-reservation">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="mu-reservation-area">
+
+          <div class="mu-title">
+            <span class="mu-subtitle">Make A</span>
+            <h2>Customer Registration</h2>
+          </div>
+
+          <div class="mu-reservation-content">
+            <p>By joining I agree to receive emails from Vj Delivery. 8 characters or longer. Combine upper and lowercase letters and numbers.By joining, you agree to Vj Delivery Terms of Service,
+              as well as to receive occasional emails from us.</p>
+
+            <div class="col-md-6">
+              <div class="mu-reservation-left">
+                <form class="mu-reservation-form"#frmCustomer="ngForm" (ngSubmit)="saveCustomer()">
+                  <div class="row">
+                    <div class="col-md-12">
+                      <div class="form-group">
+                        <input #nameRef="ngModel" maxlength="20" minlength="4" [disabled]="manuallySelected"  type="text"  [(ngModel)]="selectedcustomer.fullName" name="fullName" class="form-control" ngmodel placeholder="Full Name" required>
+                        <div *ngIf="nameRef.errors && (nameRef.dirty || nameRef.touched)" class="alert alert-danger">
+                          <div [hidden]="!nameRef.errors.required">Please Enter a Name</div>
+                          <div [hidden]="!nameRef.errors.minlength">Please Enter Atleast 4 Characters</div>
+                      </div>
+                      </div>
+                    </div>
+                    <div class="col-md-12">
+                      <div class="form-group">
+                        <input  type="email" [(ngModel)]="selectedcustomer.email" name="gmail" class="form-control" placeholder="Email">
+                      </div>
+                    </div>
+                    <div class="col-md-12">
+                      <div class="form-group">
+                        <input #refpincode="ngModel" pattern="^[0-9][0-9]{9}$" type="text" ngmodel [(ngModel)]="selectedcustomer.teleponeNO" name="teleponeNO" class="form-control" placeholder="Phone Number">
+                        <div *ngIf="refpincode.errors && (refpincode.dirty || refpincode.touched)" class="alert alert-danger">
+                          <div [hidden]="!refpincode.errors.pattern">Please Enter Ten Digit Number</div>
+                      </div>
+                      </div>
+                    </div>
+                    <div class="col-md-12">
+                      <div class="form-group">
+                        <select class="form-control" [(ngModel)]="selectedcustomer.distriac" name="distriac">
+                          <option value="0">Where are you from..?</option>
+                          <option value="Galle">Galle</option>
+                          <option value="Mathra">Mathra</option>
+                          <option value="Amblangoda">Amblangoda</option>
+                          <option value="Colombo">Colombo</option>
+                          <option value="Nuwara">Nuwara</option>
+                          <option value="Kalutra">Kalutra</option>
+                          <option value="Panadura">Panadura</option>
+                          <option value="Rthmalana">Rthmalana</option>
+                          <option value="Baddagama">Baddagama</option>
+                          <option value="Habraduwa">Habraduwa</option>
+                        </select>
+                      </div>
+                    </div>
+
+                    <div class="col-md-12">
+                      <div class="form-group">
+                        <input type="address" [(ngModel)]="selectedcustomer.address" name="address" class="form-control" id="Address" placeholder="Address">
+                      </div>
+                    </div>
+
+                    <div class="col-md-12">
+                      <div class="form-group">
+                        <input type="password" [(ngModel)]="selectedcustomer.password" name="password"  class="form-control" id="Password" placeholder="Password" >
+                      </div>
+                    </div>
+
+                    <div class="col-md-12">
+                      <div class="form-group">
+                        <input type="password" [(ngModel)]="selectedcustomer.redowPasswod" name="redowPasswod"  class="form-control" id="AgenPassword" placeholder="Agen Password">
+                      </div>
+                    </div>
+
+
+                    <div class="col-md-12">
+                      <div class="form-group">
+                        <textarea class="form-control" [(ngModel)]="selectedcustomer.youmanssge" name="youmanssge" cols="18" rows="2" placeholder="Your Message" type="textarea" id="message" placeholder="Message" maxlength="100" ></textarea>
+                        <span class="help-block"><p id="characterLeft" class="help-block ">You have reached the limit</p></span>
+                      </div>
+                    </div>
+
+
+
+
+                    <div class="col-md-12">
+                      <div class="form-group">
+                      <h6 style="color: aliceblue">Upload a different your photo...</h6>
+                      <input  type="file" #image   name="customerImage"  #customerImage  id="customerImage"  class="text-center center-block file-upload" id="file-simple"  id="file-simple" (change)="uploadImage($event)" name="customerImage" class="text-center center-block file-upload">
+                    </div>
+                  </div>
+
+                    <button type="submit" id="submit" name="submit" class="mu-readmore-btn">Make Registration</button>
+                  </div>
+                </form>
+              </div>
+            </div>
+
+            <div class="col-md-5 col-md-offset-1">
+              <div class="mu-reservation-right">
+                <div class="mu-opening-hour">
+                  <h2>Opening Hours</h2>
+                    <ul class="list-unstyled">
+                      <li>
+                          <p>Monday &amp; Tuesday</p>
+                          <p>9:00 AM - 4:00 PM</p>
+                      </li>
+                      <li>
+                          <p>Wednesday &amp; Thursday</p>
+                          <p>9:00 AM - Midnight</p>
+                      </li>
+                      <li>
+                          <p>Friday &amp; Saturday</p>
+                          <p>9:00 AM - Midnight</p>
+                      </li>
+                      <li>
+                          <p>Sunday</p>
+                          <p>9:00 AM - 11:00 PM</p>
+                      </li>
+                    </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="mu-gallery">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="mu-gallery-area">
+
+          <div class="mu-title">
+            <span class="mu-subtitle">Discover</span>
+            <h2>Our Gallery</h2>
+          </div>
+
+          <div class="mu-gallery-content">
+            <!-- Start gallery image -->
+            <div class="mu-gallery-body">
+              <!-- start single gallery image -->
+              <div class="mu-single-gallery col-md-4">
+                  <div class="mu-single-gallery-item">
+                    <figure class="mu-single-gallery-img">
+                      <a class="mu-imglink" href="../../../assets/images/img/gallery/1.jpg">
+
+                        <img alt="img" src="../../../assets/images/img/gallery/1.jpg">
+
+                         <div class="mu-single-gallery-info">
+                            <img class="mu-view-btn" src="../../../assets/images/img/plus.png" alt="plus icon img">
+
+                        </div>
+
+                      </a>
+                    </figure>
+                  </div>
+              </div>
+              <!-- End single gallery image -->
+
+              <!-- start single gallery image -->
+              <div class="mu-single-gallery col-md-4">
+                   <div class="mu-single-gallery-item">
+                      <figure class="mu-single-gallery-img">
+                        <a class="mu-imglink" href="../../../assets/images/img/gallery/2.jpg">
+                          <img alt="img" src="../../../assets/images/img/gallery/2.jpg">
+                           <div class="mu-single-gallery-info">
+                              <img class="mu-view-btn" src="../../../assets/images/img/plus.png" alt="plus icon img">
+                          </div>
+                        </a>
+                      </figure>
+                  </div>
+              </div>
+              <!-- End single gallery image -->
+
+              <!-- start single gallery image -->
+              <div class="mu-single-gallery col-md-4">
+                   <div class="mu-single-gallery-item">
+                    <figure class="mu-single-gallery-img">
+                      <a class="mu-imglink" href="../../../assets/images/img/gallery/3.jpg">
+                        <img alt="img" src="../../../assets/images/img/gallery/3.jpg">
+                         <div class="mu-single-gallery-info">
+                            <img class="mu-view-btn" src="../../../assets/images/img/plus.png" alt="plus icon img">
+                        </div>
+                      </a>
+                    </figure>
+                  </div>
+              </div>
+              <!-- End single gallery image -->
+
+              <!-- start single gallery image -->
+              <div class="mu-single-gallery col-md-4">
+                  <div class="mu-single-gallery-item">
+                    <figure class="mu-single-gallery-img">
+                      <a class="mu-imglink" href="../../../assets/images/img/gallery/4.jpg">
+                        <img alt="img" src="../../../assets/images/img/gallery/4.jpg">
+                         <div class="mu-single-gallery-info">
+                            <img class="mu-view-btn" src="../../../assets/images/img/plus.png" alt="plus icon img">
+                        </div>
+                      </a>
+                    </figure>
+                  </div>
+              </div>
+              <!-- End single gallery image -->
+
+              <!-- start single gallery image -->
+              <div class="mu-single-gallery col-md-4">
+                  <div class="mu-single-gallery-item">
+                    <figure class="mu-single-gallery-img">
+                      <a class="mu-imglink" href="../../../assets/images/img/gallery/5.jpg">
+                        <img alt="img" src="../../../assets/images/img/gallery/5.jpg">
+                         <div class="mu-single-gallery-info">
+                            <img class="mu-view-btn" src="../../../assets/images/img/plus.png" alt="plus icon img">
+                        </div>
+                      </a>
+                    </figure>
+                  </div>
+              </div>
+              <!-- End single gallery image -->
+
+              <!-- start single gallery image -->
+              <div class="mu-single-gallery col-md-4">
+                 <div class="mu-single-gallery-item">
+                    <figure class="mu-single-gallery-img">
+                      <a class="mu-imglink" href="../../../assets/images/img/gallery/6.jpg">
+                        <img alt="img" src="../../../assets/images/img/gallery/6.jpg">
+                         <div class="mu-single-gallery-info">
+                            <img class="mu-view-btn" src="../../../assets/images/img/plus.png" alt="plus icon img">
+                        </div>
+                      </a>
+                    </figure>
+                  </div>
+              </div>
+              <!-- End single gallery image -->
+
+              <!-- start single gallery image -->
+              <div class="mu-single-gallery col-md-4">
+                  <div class="mu-single-gallery-item">
+                    <figure class="mu-single-gallery-img">
+                      <a class="mu-imglink" href="../../../assets/images/img/gallery/7.jpg">
+                        <img alt="img" src="../../../assets/images/img/gallery/7.jpg">
+                         <div class="mu-single-gallery-info">
+                            <img class="mu-view-btn" src="../../../assets/images/img/plus.png" alt="plus icon img">
+
+                        </div>
+                      </a>
+                    </figure>
+                  </div>
+              </div>
+              <!-- End single gallery image -->
+
+              <!-- start single gallery image -->
+              <div class="mu-single-gallery col-md-4">
+                  <div class="mu-single-gallery-item">
+                    <figure class="mu-single-gallery-img">
+                      <a class="mu-imglink" href="../../../assets/images/img/gallery/8.jpg">
+                        <img alt="img" src="../../../assets/images/img/gallery/8.jpg">
+                         <div class="mu-single-gallery-info">
+                            <img class="mu-view-btn" src="../../../assets/images/img/plus.png" alt="plus icon img">
+                        </div>
+                      </a>
+                    </figure>
+                  </div>
+              </div>
+              <!-- End single gallery image -->
+
+              <!-- start single gallery image -->
+              <div class="mu-single-gallery col-md-4">
+                  <div class="mu-single-gallery-item">
+                    <figure class="mu-single-gallery-img">
+                      <a class="mu-imglink" href="../../../assets/images/img/gallery/9.jpg">
+                        <img alt="img" src="../../../assets/images/img/gallery/9.jpg">
+                         <div class="mu-single-gallery-info">
+                            <img class="mu-view-btn" src="../../../assets/images/img/plus.png" alt="plus icon img">
+                        </div>
+                      </a>
+                    </figure>
+                  </div>
+              </div>
+              <!-- End single gallery image -->
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="mu-client-testimonial">
+  <div class="mu-overlay">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="mu-client-testimonial-area">
+
+            <div class="mu-title">
+              <span class="mu-subtitle">Testimonials</span>
+              <h2>What Customers Say</h2>
+            </div>
+
+            <!-- testimonial content -->
+            <div class="mu-testimonial-content">
+              <!-- testimonial slider -->
+              <ul class="mu-testimonial-slider">
+                <li>
+                  <div class="mu-testimonial-single">
+                    <div class="mu-testimonial-info">
+                      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate consequuntur ducimus cumque iure modi nesciunt recusandae eligendi vitae voluptatibus, voluptatum tempore, ipsum nisi perspiciatis. Rerum nesciunt fuga ab natus, dolorem?</p>
+                    </div>
+                    <div class="mu-testimonial-bio">
+                      <p>- David Muller</p>
+                    </div>
+                  </div>
+                </li>
+                 <li>
+                  <div class="mu-testimonial-single">
+                    <div class="mu-testimonial-info">
+                      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate consequuntur ducimus cumque iure modi nesciunt recusandae eligendi vitae voluptatibus, voluptatum tempore, ipsum nisi perspiciatis. Rerum nesciunt fuga ab natus, dolorem?</p>
+                    </div>
+                    <div class="mu-testimonial-bio">
+                      <p>- David Muller</p>
+                    </div>
+                  </div>
+                </li>
+                 <li>
+                  <div class="mu-testimonial-single">
+                    <div class="mu-testimonial-info">
+                      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate consequuntur ducimus cumque iure modi nesciunt recusandae eligendi vitae voluptatibus, voluptatum tempore, ipsum nisi perspiciatis. Rerum nesciunt fuga ab natus, dolorem?</p>
+                    </div>
+                    <div class="mu-testimonial-bio">
+                      <p>- David Muller</p>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<section id="mu-contact">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="mu-contact-area">
+
+          <div class="mu-title">
+            <span class="mu-subtitle">Get In Touch</span>
+            <h2>Contact Us</h2>
+          </div>
+
+          <div class="mu-contact-content">
+            <div class="row">
+
+              <div class="col-md-6">
+                <div class="mu-contact-left">
+                  <!-- Email message div -->
+                  <div id="form-messages"></div>
+                  <!-- Start contact form -->
+                  <form id="ajax-contact" method="post" action="https://technext.github.io/Osteriax/mailer.php" class="mu-contact-form">
+                    <div class="form-group">
+                      <label for="name">Your Name</label>
+                      <input type="text" class="form-control" id="name" name="name" placeholder="Name" required>
+                    </div>
+                    <div class="form-group">
+                      <label for="email">Email address</label>
+                      <input type="email" class="form-control" id="email" name="email" placeholder="Email" required>
+                    </div>
+                    <div class="form-group">
+                      <label for="subject">Subject</label>
+                      <input type="text" class="form-control" id="subject" name="subject" placeholder="Subject" required>
+                    </div>
+                    <div class="form-group">
+                      <label for="message">Message</label>
+                      <textarea class="form-control" id="messagee" name="message"  cols="30" rows="10" placeholder="Type Your Message" required></textarea>
+                    </div>
+                    <button type="submit" class="mu-send-btn">Send Message</button>
+                  </form>
+                </div>
+              </div>
+
+              <div class="col-md-6">
+                <div class="mu-contact-right">
+                  <div class="mu-contact-widget">
+                    <h3>Office Address</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia temporibus corporis ea non consequatur porro corrupti hic voluptatibus assumenda, doloribus.</p>
+                    <address>
+                      <p><i class="fa fa-phone"></i> (850) 457 6688</p>
+                      <p><i class="fa fa-envelope-o"></i>contact@markups.io</p>
+                      <p><i class="fa fa-map-marker"></i>368 St. Panama City, Florida, USA</p>
+                    </address>
+                  </div>
+                  <div class="mu-contact-widget">
+                    <h3>Open Hours</h3>
+                    <address>
+                      <p><span>Monday - Friday</span> 9.00 am to 12 pm</p>
+                      <p><span>Saturday</span> 9.00 am to 10 pm</p>
+                      <p><span>Sunday</span> 10.00 am to 12 pm</p>
+                    </address>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End Contact section -->
+
+<!-- Start Map section -->
+<section id="mu-map">
+  <iframe src="https://www.google.com/maps/d/embed?mid=1fMdjWYb5liJnuWhtRf_sYuzptYo" width="100%" height="100%" frameborder="0"allowfullscreen></iframe>
+</section>
+<!-- End Map section -->
+
+<!-- Start Footer -->
+<footer id="mu-footer">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+      <div class="mu-footer-area">
+         <div class="mu-footer-social">
+          <a href="#"><span class="fa fa-facebook"></span></a>
+          <a href="#"><span class="fa fa-twitter"></span></a>
+          <a href="#"><span class="fa fa-google-plus"></span></a>
+          <a href="#"><span class="fa fa-linkedin"></span></a>
+          <a href="#"><span class="fa fa-youtube"></span></a>
+        </div>
+        <div class="mu-footer-copyright">
+          <p>&copy; Copyright <a rel="nofollow" href="http://markups.io/">markups.io</a>. All right reserved.</p>
+        </div>
+      </div>
+    </div>
+    </div>
+  </div>
+</footer>
+
+
+<!-- body -->
+
+
+
+
+

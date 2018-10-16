@@ -1,0 +1,163 @@
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+ <nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" >Vj Dilivery</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+         <li><a ><span class="glyphicon glyphicon-th" aria-hidden="true"></span> Dashboard</a></li>
+         <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Rider Login <span class="caret"></span></a>
+              <ul id="login-dp" class="dropdown-menu">
+                <li>VJ Delivery Wokers  Only use
+                  <div class="row">
+                    <div class="col-md-12">
+                      <form  action="" method="post"
+                         class="form" role="form" method="post" action="login" accept-charset="UTF-8" id="login-nav">
+                        <div class="form-group">
+                          <label class="sr-only" for="exampleInputEmail2">Email address</label>
+                          <input [(ngModel)]="selectRider.username" #username="ngModel" name="txtUserName" type="email" type="text" class="form-control" id="exampleInputEmail2" placeholder="Email address" required>
+                        </div>
+                        <div class="form-group">
+                          <label class="sr-only" for="exampleInputPassword2">Password</label>
+                          <input [(ngModel)]="selectRider.password"  name="txtPassword"  type="password" class="form-control" id="exampleInputPassword2" placeholder="Password" required>
+                          <div class="help-block text-right"><a href="">Forget the password ?</a></div>
+                        </div>
+                        <div class="form-group">
+                          <button (click) ="loginRider()" type="submit" class="btn btn-primary btn-block" >Sign in</button>
+                        </div>
+                        <div class="checkbox">
+                          <label>
+                            <input type="checkbox"> keep me logged-in
+                          </label>
+                        </div>
+                      </form>
+    
+                      <div *ngIf="failed" class="alert alert-danger alert-dismissible" style="margin-top:10px;">
+                        <h6><i class="icon fa fa-ban"></i> Invalid Login Credentials !</h6>
+                        Please enter valid login credentials to login
+                      </div>
+    
+                    </div>
+                  
+                  </div>
+                </li>
+              </ul>  
+        </li>
+        <li class="dropdown">
+          <a  class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Rider Logout <span class="caret"></span></a>
+        
+          <ul id="login-dp" class="dropdown-menu">
+            <li>VJ Delivery Wokers  Only use
+              <div class="row">
+                <div class="col-md-12">
+                  <form  action="" method="post"
+                     class="form" role="form" method="post" action="login" accept-charset="UTF-8" id="login-nav">
+
+                    <div class="form-group">
+                      <select class="form-control" name="paymentModel" [(ngModel)]="selectedRider.riderName" name="riderName" id="riderName" >
+                        <option *ngFor="let selectedRider of riderOnlinedtos" [value]="selectedRider.riderName">{{selectedRider.riderName}}</option>
+                    </select>
+                    </div>
+
+                    <div class="form-group">
+                      <button (click) =" deleteFeedback()" type="submit" class="btn btn-primary btn-block" >Logout</button>
+                    </div>
+                  </form>
+                  <div *ngIf="failed" class="alert alert-danger alert-dismissible" style="margin-top:10px;">
+                    <h6><i class="icon fa fa-ban"></i> Invalid Login Credentials !</h6>
+                    Please enter valid login credentials to login
+                  </div>
+
+                </div>
+              
+              </div>
+            </li>
+          </ul>  
+
+        </li>
+      <li class="dropdown">
+          <a  class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Notes <span class="caret"></span></a>
+
+      </li>
+      <li><a >Accounts</a></li>
+      <li class="dropdown">
+          <a  class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Learnings <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a >Overview</a></li>
+            <li><a >New Learning</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a >Categories</a></li>
+          </ul>
+      </li>
+      <li class="dropdown" >
+          <a  class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Online Riders<span class="caret"></span></a>
+          <ul class="dropdown-menu dropdown-cart" role="menu" >
+            <li *ngFor="let onlineRider of orderDetailDto">
+                <span class="item">
+                  <span class="item-left">
+                      <span class="item-info">
+                          <span>{{onlineRider.riderName}}</span>  
+                      </span>
+                  </span>
+                  <span class="item-right">
+                    <i class="fa fa-circle text-success"></i>
+                  </span>
+              </span>
+            </li>
+            <li class="divider"></li>
+            <li><a class="text-center" href="">View Online Riders</a></li>
+        </ul>
+
+
+      </li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li class="dropdown">
+          <a  class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-link" aria-hidden="true"></span> Links<span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="http://www.google.ch" target="_blank">My Webmail</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="http://www.google.ch" target="_blank">Timelogger</a></li>
+            <li><a href="http://www.cubetech.ch" target="_blank">cubetech.ch</a></li>
+         </ul>
+        </li>
+         <li class="dropdown">
+          <a  class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> Jack Bass<span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="http://www.fgruber.ch/" target="_blank"><span class="glyphicon glyphicon-cog" aria-hidden="true"></span> User Settings</a></li>
+            <li><a href="" (click)="logout()" ><span class="glyphicon glyphicon-log-out" aria-hidden="true"></span> Logout</a></li>
+         </ul>
+        </li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
+<div class="row">
+  <div class="col-md-12"style="background-color:white" style=" background-image: url(../../../assets/light-wood-texture-home-decor-free-seamless-textures-patterns-for-3d-mapping.jpg)">
+    <router-outlet></router-outlet>  
+  </div>
+</div>
+  <footer class="main-footer ">
+
+    <div class="pull-right hidden-xs">
+      <b>Version</b> 2.4.0
+    </div>
+    <strong>Copyright &copy; 2014-2016 <a href="">Almsaeed Studio</a>.</strong> All rights
+    reserved.
+  </footer>

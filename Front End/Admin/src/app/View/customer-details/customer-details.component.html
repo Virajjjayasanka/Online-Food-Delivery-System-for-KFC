@@ -1,0 +1,145 @@
+<br><br>
+
+<div class="container bootstrap snippet" xmlns="">
+<div class="content"  style=" background-image: url(../../../assets/light-wood-texture-home-decor-free-seamless-textures-patterns-for-3d-mapping.jpg)" >
+
+  <section class="content-header">
+    <h1>
+      Customer Details
+      <small>Preview</small>
+    </h1>
+    <ol class="breadcrumb">
+      <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+      <li><a href="#">Forms</a></li>
+      <li class="active">Food - Rice Informations </li>
+    </ol>
+  </section>
+  <br>
+  <br>
+  <div class="row">
+    <div class="col-md-3 col-sm-6 col-xs-12">
+      <div class="info-box">
+        <span class="info-box-icon bg-aqua"><i class="ion ion-ios-gear-outline"></i></span>
+
+        <div class="info-box-content">
+          <span class="info-box-text">Orders</span>
+          <span class="info-box-number">90<small>%</small></span>
+        </div>
+        <!-- /.info-box-content -->
+      </div>
+      <!-- /.info-box -->
+    </div>
+    <!-- /.col -->
+
+    <!-- fix for small devices only -->
+    <div class="clearfix visible-sm-block"></div>
+
+    <div class="col-md-3 col-sm-6 col-xs-12">
+      <div class="info-box">
+        <span class="info-box-icon bg-green"><i class="ion ion-ios-cart-outline"></i></span>
+
+        <div class="info-box-content">
+          <span class="info-box-text">Sales</span>
+          <span class="info-box-number">760</span>
+        </div>
+        <!-- /.info-box-content -->
+      </div>
+      <!-- /.info-box -->
+    </div>
+    <!-- /.col -->
+    <div class="col-md-3 col-sm-6 col-xs-12">
+      <div class="info-box">
+        <span class="info-box-icon bg-yellow"><i class="ion ion-ios-people-outline"></i></span>
+
+        <div class="info-box-content">
+          <span class="info-box-text">Feed Backs</span>
+          <span class="info-box-number">2,000</span>
+        </div>
+        <!-- /.info-box-content -->
+      </div>
+      <!-- /.info-box -->
+    </div>
+    <!-- /.col -->
+  </div>
+  <br>
+  <div class="container col-sm-8">
+	<div class="row" style="font-size: 5px">
+		<h2>Search Form with Customer Email</h2>
+        
+        <form class="classNameHere" role="search">
+    	<div class="input-group">
+			<input type="text"  [(ngModel)]="selectedCustomer.email" class="form-control" placeholder="Search" name="srch-term" id="srch-term">
+			<div class="input-group-btn">
+                <button (click)="getSerachCustomer()" class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
+                <button (click)="getAllCustomer()" class="btn btn-default" type="submit"><i class="glyphicon glyphicon-refresh"></i></button>
+			</div>
+		</div>
+		</form>
+	</div>
+</div>
+
+    <hr>
+    <div class="container  col-sm-12">
+        <br><br>
+      <table id="cart" class="table table-hover table-condensed">
+        <thead>
+        <tr>
+          <th style="width:18%">Customer Image</th>
+          <th style="width:12%">Email</th>
+          <th style="width:12%">Password</th>
+          <th style="width:12%">TeleponeNO</th>
+          <th style="width:12%">Full Name</th>
+          <th style="width:12%" class="text-center">District</th>
+          <th style="width:12%" class="text-center">Address</th>
+          <th style="widows: 15%" class="text-center">Massage</th>
+          <th style="width:10%">Delete/View</th>
+        
+        </tr>
+        </thead>
+  
+        
+        <tbody>
+            <br> 
+            <br> <!--(click)="SelectedOrders(orders)" [class.selected]="orders==selectedOrders"-->
+            <tr *ngFor="let customer  of customers | paginate: { itemsPerPage: 5, currentPage: p }">
+               <td data-th="Product">
+                  <div class="row">
+                    <div class="col-sm-9 hidden-xs"><img [src]="customer.customerImage" class="avatar img-circle img-thumbnail" alt="avatar" style="width: 250px;height: 120px"></div>
+                  </div>
+                </td>
+              <td>{{customer.email}}</td>
+              <td>{{customer.password }}</td>
+              <td>{{customer.teleponeNO}}</td>
+              <td>{{customer.fullName}}</td>
+              <td>{{customer.distriac}}</td>
+              <td>{{customer.address}}</td>
+              <td>{{customer.youmanssge}}</td>
+
+  
+             <td class="actions" data-th="">
+  
+                <a href="#" class="btn btn-primary a-btn-slide-text">
+                    <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+                    <span><strong>View ..</strong></span>            
+                </a>
+               
+                <a (click)="deleteCustomer(customer)" class="btn btn-primary a-btn-slide-text" style="background-color: red">
+                    <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+                     <span><strong>Delete</strong></span>            
+                 </a>
+
+              </td>       
+            </tr>
+            </tbody>
+      </table>
+      <tfoot>
+        <tr>
+          <td colspan="4">
+            <pagination-controls (pageChange)="p = $event"></pagination-controls>
+          </td>
+        </tr>
+        </tfoot>
+    </div>
+    <hr>
+</div>
+</div>

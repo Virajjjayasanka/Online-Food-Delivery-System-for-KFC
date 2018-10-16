@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="VJOnlineResturantDeliverySystemBackEnd:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <root id="archive" name="VJ-Online-Resturant-Delivery-System-BackEnd-1.0.0.war">
+      <element id="artifact" artifact-name="VJOnlineResturantDeliverySystemBackEnd:war exploded" />
+    </root>
+  </artifact>
+</component>

@@ -1,0 +1,287 @@
+<br><br>
+<div class="content"  style=" background-image: url(../../../../../assets/light-wood-texture-home-decor-free-seamless-textures-patterns-for-3d-mapping.jpg)">
+
+  <section class="content-header">
+    <h1>
+      Food - Rice
+      <small>Preview</small>
+    </h1>
+    <ol class="breadcrumb">
+      <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+      <li><a href="#">Forms</a></li>
+      <li class="active">Food - Rice Informations </li>
+    </ol>
+  </section>
+  <br>
+  <br>
+  <br>
+  <div class="container bootstrap snippet" xmlns="">
+  <div class="col-sm-12">
+    <ul class="nav nav-tabs">
+      <li class="active"><a data-toggle="tab" href="#messages" >Items</a></li>
+      <li><a data-toggle="tab" href="#settings" (click)="itemSelectModelGet()" >Selected Item</a></li>
+      <li><a data-toggle="tab" href="#home" (click)="SelectItemGetAll()" >All Selected Item</a></li>
+    </ul>
+
+    <div class="active" class="tab-content">
+      <div  class="tab-pane active" id="messages">
+        <hr>
+        <div class="container  col-sm-12">
+          <table id="carte" class="table table-hover table-condensed">
+            <thead>
+            <tr>
+              <th style="width:28%">Product</th>
+              <th style="width:25%" >Discription</th>
+              <th style="width:12%">Name</th>
+              <th style="width:8%" >Price</th>
+              <th style="width:8%" >Qty</th>
+              <th style="width:22%" class="text-center">Subtotal</th>
+              <th style="width:10%">Add</th>
+            </tr>
+            </thead>
+            <tbody>
+                <br>
+                <br> <!--(click)="SelectedOrders(orders)" [class.selected]="orders==selectedOrders"-->
+                <tr *ngFor="let item  of Items | paginate: { itemsPerPage: 100, currentPage: p }"
+                   >
+                   <td data-th="Product">
+                      <div class="row">
+                        <div class="col-sm-9 hidden-xs"><img [src]="item.itemImage" class="img-responsive img-thumbnail" alt="avatar" style="width: 250px;height: 180px"></div>
+                      </div>
+                    </td>
+                    <td style="font-style: oblique">{{item.discription }}</td>
+                    <td style="font-weight: bold">{{item.itemName }}</td>
+                    <td style="font-weight: bold ; font-size: 14px">{{item.itemprice}}</td>
+                    <td data-th="Quantity">
+                      <input type="number" [(ngModel)]="item.qty" (click)="item.subtotal = item.itemprice * item.qty"
+                        class="form-control text-center" value="1">
+                    </td>
+                    <td data-th="Subtotal" class="text-center">{{ item.subtotal }}</td>
+                    <td class="actions" data-th="">
+                      <a (click)="saveSelctItem(item)"  (click)="CustomerTotalCount()" class="btn btn-primary a-btn-slide-text" (click)="CustomerTotalCount()">
+                        <span class="ion ion-android-cart" aria-hidden="true"></span>
+                        <span><strong>Add Item</strong></span>
+                    </a>
+                </tr>
+                </tbody>
+          </table>
+
+        </div>
+
+        <hr>
+      </div>
+      <!--/tab-pane-->
+
+      <div class="tab-pane" id="settings">
+        <h2></h2>
+        <hr>
+        <div class="container  col-sm-12">
+          <table id="cart" class="table table-hover table-condensed">
+            <thead>
+            <tr>
+              <th style="width:28%">Product</th>
+              <th style="width:25%" >Discription</th>
+              <th style="width:12%" >Name</th>
+              <th style="width:8%" >Price</th>
+              <th style="width:8%" >Qty</th>
+              <th style="width:22%" class="text-center">Subtotal</th>
+              <th style="width:10%" class="text-center">Add</th>
+            </tr>
+            </thead>
+            <tbody>
+                <br>
+                <br> <!--(click)="SelectedOrders(orders)" [class.selected]="orders==selectedOrders"-->
+                <tr *ngFor="let itemSelectsa  of selectItemDTOS | paginate: { itemsPerPage: 100, currentPage: p }"
+                   >
+                   <td data-th="Product">
+                      <div class="row">
+                        <div class="col-sm-9 hidden-xs"><img [src]="itemSelectsa.imageURL" class="img-responsive img-thumbnail" alt="avatar" style="width: 250px;height: 180px"></div>
+                      </div>
+                    </td>
+                    <td>{{itemSelectsa.itemModel}}</td>
+                    <td>{{itemSelectsa.itemName}}</td>
+                    <td>{{itemSelectsa.price}}</td>
+                    <td data-th="Quantity">
+                        <input type="number" [(ngModel)]="itemSelectsa.qty" (click)="itemSelectsa.subTotal = itemSelectsa.price * itemSelectsa.qty"
+                          id="qty" class="form-control text-center" value="1">
+                      </td>
+                   <td  class="text-center">{{itemSelectsa.subTotal }}</td>
+                   <td class="actions" data-th="">
+                      <a (click)="updateItem(itemSelectsa)" class="btn btn-primary a-btn-slide-text" (click)="CustomerTotalCount()">
+                        <span class="ion ion-loop" aria-hidden="true"></span>
+                        <span><strong> Update </strong></span>
+                    </a>
+                    </td>
+                </tr>
+                </tbody>
+          </table>  
+        </div>
+      </div>
+      <!--/tab-pane-->
+      <div class="tab-pane" id="home">
+        <h2></h2>
+        <hr>
+        <div class="container  col-sm-12">
+          <table  class="table table-hover table-condensed">
+            <thead>
+            <tr>
+              <th style="width:28%">Product</th>
+              <th style="width:25%">Model</th>
+              <th style="width:12%">Name</th>
+              <th style="width:8%">Price</th>
+              <th style="width:8%">Qty</th>
+              <th style="width:15%">subTotal</th>
+              <th style="width:10%">Delete</th>
+            </tr>
+            </thead>
+            <tbody>
+                <br>
+                <br>
+                <tr *ngFor="let itemSelectAll of allSelectItem | paginate: { itemsPerPage: 4, currentPage: s }"
+                   >
+                   <td data-th="Product">
+                      <div class="row">
+                        <div class="col-sm-9 hidden-xs"><img [src]="itemSelectAll.imageURL" class="img-responsive img-thumbnail" alt="avatar" style="width: 250px;height: 180px"></div>
+                      </div>
+                    </td>
+                    <td>{{itemSelectAll.itemModel}}</td>
+                    <td>{{itemSelectAll.itemName}}</td>
+                    <td>{{itemSelectAll.price}}</td>
+                    <td>{{itemSelectAll.qty}}</td>
+                    <td>{{itemSelectAll.subTotal}}</td>
+                 <td class="actions" data-th="">
+                  <a (click)="CustomerTotalCount()" class="btn btn-primary a-btn-slide-text">
+                    <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+                    <span><strong>Refash</strong></span>
+                </a>
+                    <a  (click)="deletSelectItem(itemSelectAll)"  class="btn btn-primary a-btn-slide-text" style="background-color: red" (click)="CustomerTotalCount()">
+                      <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+                       <span><strong>Delete</strong></span>
+                   </a>
+                  </td>
+                </tr>
+                </tbody>
+          </table> 
+          <tfoot>
+            <tr>
+              <td colspan="4">
+                <pagination-controls (pageChange)="s = $event"></pagination-controls>
+              </td>
+            </tr>
+            </tfoot>    
+      </div>
+      <div class="container">
+        <div class="row">
+          <div class="paymentCont">
+                  <div class="headingWrap">
+                      <h3 class="headingTop text-center">Select Your Payment Method</h3>
+                      <p class="text-center">Created with bootsrap button and using radio button</p>
+                  </div>
+                  <div class="paymentWrap">
+                    <div class="btn-group paymentBtnGroup btn-group-justified" data-toggle="buttons">
+                            <label class="btn paymentMethod active">
+                              <div class="method visa"></div>
+                                <input type="radio" name="options" checked>
+                            </label>
+                            <label class="btn paymentMethod">
+                              <div class="method master-card"></div>
+                                <input type="radio" name="options">
+                            </label>
+                            <label class="btn paymentMethod">
+                              <div class="method amex"></div>
+                                <input type="radio" name="options">
+                            </label>
+                             <label class="btn paymentMethod">
+                               <div class="method vishwa"></div>
+                                <input type="radio" name="options">
+                            </label>
+                            <label class="btn paymentMethod">
+                              <div class="method ez-cash"></div>
+                                <input type="radio" name="options">
+                            </label>
+                        </div>
+                  </div>
+                </div>
+        </div>
+      </div>
+      <div class="container">
+        <div class="reciept">
+          <div class="row" style="margin-top:10px;">
+            <div class="col-md-12">
+              <div class="col-md-3">
+                    <img [src]="imageUrl" class="media-object img-thumbnail user-img" style="height: 80px;" alt="User Picture" src="http://via.placeholder.com/80x80"></div>
+               <div class="col-md-9 text-right">
+              <h4 class="heading">{{fullName}}</h4>
+              <h5 class="heading">{{distriac}} ,{{address}}</h5>
+              <h6 class="heading">{{teleponeNO}}</h6>
+              </div>
+            </div>
+          </div>
+          <br/>
+              <br/>
+              <div class="row">
+            <div class="col-md-6">
+              <div class="form-group">
+                      <label class="col-md-3 control" >Total :</label>
+                      <div class="col-md-9">
+                        <h6 style="font-size: 14px ; font-weight: 900">{{totalamount}}</h6>
+                      </div>
+                    </div>
+              <div class="form-group">
+                      <label class="col-md-3 control" >Delivery charges:</label>
+                      <div class="col-md-9">
+                         <h6 style="font-size: 14px ; font-weight: 900">{{diliverAmount}}</h6>
+                      </div>
+                    </div>
+              <div class="form-group">
+                      <label class="col-md-3 control">Subtotal :</label>
+                      <div class="col-md-9">
+                          <h6 style="font-size: 14px ; font-weight: 900">{{allOrderSubtoal}}</h6>
+                      </div>
+                    </div>
+             </div>
+             <div class="col-md-6">
+              <div class="form-group">
+                      <label class="col-sm-3 control">Other T.No :</label>
+                      <div class="col-sm-9">
+                        <input id="" name="name" type="text" placeholder="Other T.No" class="form-control">
+                      </div>
+                    </div>
+              <div class="form-group">
+                      <label class="col-sm-3 control" >Receiving Time :</label>
+                      <div class="col-sm-9">
+                        <input id="aa" name="name" type="text" placeholder="Receiving Time" class="form-control">
+                      </div>
+                    </div>
+              <div class="form-group">
+                      <label class="col-sm-3 control" >Other Comment :</label>
+                      <div class="col-sm-9">
+                        <input id="a" name="name" type="text" placeholder="Other Comment" class="form-control">
+                      </div>
+                    </div>
+             </div>
+                    </div>
+              <br/>
+              <div class="row">
+            </div>
+            <div class="row" style="margin-top:80px;">
+            <div class="col-md-9">
+            </div>
+            <div class="col-md-3">
+              <div class="form-group">
+                      <label class="control" ><u>Chak  your Address And Telepone No</u></label>
+                    </div>
+            </div>
+            </div>
+            </div>
+            <div class="footerNavWrap clearfix">
+              <div (click)="SaveItemsDeletForItemID()" class="btn btn-success pull-left btn-fyi"><span class="glyphicon glyphicon-chevron-left"></span> CONTINUE SHOPPING</div>
+              <div (click)="save()"class="btn btn-success pull-right btn-fyi">CHECKOUT<span class="glyphicon glyphicon-chevron-right"></span></div>
+            </div>
+          </div>
+    </div>   
+    </div>
+   </div>
+</div>
+</div>
+

@@ -1,0 +1,102 @@
+<br><br><br>
+<div class="container">
+    <div class="row ">
+        <div class="col-md-12">
+            <ul class="breadcrumb">
+              <li><a routerLink="" routerLinkActive="active">Home</a></li>
+              <li class="active">Order Informations</li>
+              <li class="active">Forms</li>
+            </ul>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Order Data</h3>
+                </div>
+                <div class="panel-body">
+                    <div class="col-md-12">
+                        <table class="table table-striped custab">
+                            <thead>
+                                <tr>
+                                  <th style="width:28%">Order ID</th>
+                                  <th style="width:25%">Date</th>
+                                  <th style="width:12%">Total</th>
+                                  <th style="width:12%">Order Time</th>
+                                  <th style="width:12%">Start Time</th>
+                                  <th style="width:12%">Show Ditail</th>
+                                </tr>
+                                </thead>
+                        <tbody>
+                            <tr *ngFor="let customerOrders of customerOrdes | paginate: { itemsPerPage: 100, currentPage: q }"
+                               >
+                                <td>{{customerOrders.oderID}}</td>
+                                <td>{{datepipe.transform(customerOrders.date, 'yyyy-MM-d')}}</td>
+                                <td>{{customerOrders.total}}</td>
+                                <td>{{datepipe.transform(customerOrders.date, 'hh:mm:ss')}}</td>
+                                <td>{{time}}</td>
+
+                             <td class="actions" data-th="">
+                              <a (click)="getCustomerorderList(customerOrders)"  class="btn btn-primary a-btn-slide-text">
+                                <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+                                <span><strong>Show Details</strong></span>
+                            </a>
+                              </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+     <div class="row">
+        <div class="col-md-12">
+                <div class="panel panel-primary">
+                  <div class="panel-heading">
+                    <h3 class="panel-title">Order Details list</h3>
+                  </div>
+                  <div class="panel-body">
+                    <div class="col-md-12">
+                        <table class="table table-striped custab">
+                            <thead>
+                                <tr>
+                                  <th style="width:28%">Prodact</th>
+                                  <th style="width:28%">Item Model</th>
+                                  <th style="width:25%">Item Name</th>
+                                  <th style="width:12%">price</th>
+                                  <th style="width:12%">Qty</th>
+                                  <th style="width:12%">subTotal</th>
+                                </tr>
+                                </thead>
+                          <tbody>
+                            <tr *ngFor="let orderDetailDtos of orderDetailDto | paginate: { itemsPerPage: 5, currentPage: s }">
+                                    <td data-th="Product">
+                                            <div class="row">
+                                              <div class="col-sm-9 hidden-xs"><img [src]="orderDetailDtos.imageURL" class="img-responsive img-thumbnail" alt="avatar" style="width: 250px;height: 180px"></div>
+                                            </div>
+                                          </td>
+                                <td>{{orderDetailDtos.itemModel}}</td>
+                                <td>{{orderDetailDtos.itemName}}</td>
+                                <td>{{orderDetailDtos.price}}</td>
+                                <td>{{orderDetailDtos.qty}}</td>
+                                <td>{{orderDetailDtos.subTotal}}</td>
+                            </tbody>
+                        </table>
+                        <tfoot>
+                            <tr>
+                              <td colspan="4">
+                                <pagination-controls (pageChange)="s = $event"></pagination-controls>
+                              </td>
+                            </tr>
+                        </tfoot>
+                    </div>
+                </div>
+             </div>
+        </div>
+    </div>
+
+
+

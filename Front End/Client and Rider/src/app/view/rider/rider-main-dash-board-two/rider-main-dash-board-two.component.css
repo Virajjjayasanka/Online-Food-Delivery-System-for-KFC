@@ -1,0 +1,130 @@
+
+/* Table css Start */
+a.del
+{
+    background:#d9534f;
+    border-radius: 2px; 
+    width: 35px;
+    height:28px; 
+    padding-left:12px;
+    line-height:10px;
+}
+
+a.edit
+{
+    padding-left:10px;
+    background:#337ab7;
+    color:#fff;
+    border-radius:2px;
+    border:none;
+}
+
+tr.row-name
+{
+    font-size: 18px;
+    color:#448aff;
+}
+
+tr.row-content
+{
+    color:#6c7173;
+}
+
+table
+{
+    border-bottom: 8px solid #448aff;
+}
+
+td.check
+{
+    text-align: center;
+}
+
+.table-striped>tbody>tr:nth-of-type(odd)
+{
+    background:#F0F2F2 !important; 
+}
+
+a.btn-danger:hover
+{
+    background: #de6c69;
+}
+
+a.btn-danger
+{
+    background:#d9534f;  
+}
+
+a.btn-top
+{
+    background:#448aff;
+    color:#fff;
+    border:1px solid #448aff; 
+    padding: 7px 10px; 
+    border-radius:4px; 
+}
+
+a.btn-top:hover
+{
+    text-decoration: none;
+    box-shadow:3px 3px 5px #222; 
+    transition:box-shadow 0.5s; 
+}
+
+/* Table css End */
+
+
+.custab{
+    border: 1px solid #ccc;
+    padding: 5px;
+    margin: 5% 0;
+    box-shadow: 3px 3px 2px #ccc;
+    transition: 0.5s;
+    }
+.custab:hover{
+    box-shadow: 3px 3px 0px transparent;
+    transition: 0.5s;
+    }
+
+
+    .control{
+        padding-top:7px;
+        }
+        
+        .reciept{
+        border-top: 5px solid #2196f3;
+        -webkit-box-shadow: 0px 5px 21px -2px rgba(0,0,0,0.47);
+        -moz-box-shadow: 0px 5px 21px -2px rgba(0,0,0,0.47);
+        box-shadow: 0px 5px 21px -2px rgba(0,0,0,0.47);
+        margin-top: 10px;
+        margin-bottom: 10px;
+        }
+        
+        a.btn:hover {
+            -webkit-transform: scale(1.1);
+            -moz-transform: scale(1.1);
+            -o-transform: scale(1.1);
+        }
+        a.btn {
+            -webkit-transform: scale(0.8);
+            -moz-transform: scale(0.8);
+            -o-transform: scale(0.8);
+            -webkit-transition-duration: 0.5s;
+            -moz-transition-duration: 0.5s;
+            -o-transition-duration: 0.5s;
+        }
+
+
+        body{padding-top:30px;}
+
+        .glyphicon {  margin-bottom: 10px;margin-right: 10px;}
+        
+        small {
+        display: block;
+        line-height: 1.428571429;
+        color: #999;
+        }
+        
+        
+
+    

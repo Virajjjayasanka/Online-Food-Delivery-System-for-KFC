@@ -1,0 +1,338 @@
+
+<br><br><br><br><br>
+<section class="content">
+  <!-- Info boxes -->
+  <div class="row">
+    <div class="col-md-3 col-sm-6 col-xs-12">
+      <div class="info-box">
+        <span class="info-box-icon bg-aqua"><i class="ion ion-coffee"></i></span>
+
+        <div class="info-box-content">
+          <span class="info-box-text">Orders</span>
+          <span class="info-box-number">90<small>%</small></span>
+        </div>
+        <!-- /.info-box-content -->
+      </div>
+      <!-- /.info-box -->
+    </div>
+    <!-- /.col -->
+    <div class="col-md-3 col-sm-6 col-xs-12">
+      <div class="info-box">
+        <span class="info-box-icon bg-red"><i class="ion ion-android-archive"></i></span>
+
+        <div class="info-box-content">
+          <span class="info-box-text">Items</span>
+          <span class="info-box-number">41,410</span>
+        </div>
+        <!-- /.info-box-content -->
+      </div>
+      <!-- /.info-box -->
+    </div>
+    <!-- /.col -->
+
+    <!-- fix for small devices only -->
+    <div class="clearfix visible-sm-block"></div>
+
+    <div class="col-md-3 col-sm-6 col-xs-12">
+      <div class="info-box">
+        <span class="info-box-icon bg-green"><i class="ion ion-ios-cart-outline"></i></span>
+
+        <div class="info-box-content">
+          <span class="info-box-text">Sales</span>
+          <span class="info-box-number">760</span>
+        </div>
+        <!-- /.info-box-content -->
+      </div>
+      <!-- /.info-box -->
+    </div>
+    <!-- /.col -->
+    <div class="col-md-3 col-sm-6 col-xs-12">
+      <div class="info-box">
+        <span class="info-box-icon bg-yellow"><i class="ion ion-ios-people-outline"></i></span>
+        <div class="info-box-content">
+          <span class="info-box-text">All Riders / {{allRider}}</span>
+          <br>
+          <span class="info-box-number">Online Riders / {{onlineRiders}}</span>
+        </div>
+        <!-- /.info-box-content -->
+      </div>
+      <!-- /.info-box -->
+    </div>
+  </div>
+  <br>
+  <div class="">
+    <div class="row ">
+        <div class="col-md-12">
+            <ul class="breadcrumb">
+              <li><a href="#">Conceptual Data</a></li>
+              <li class="active">Data Entity</li>
+              <li class="active">Logical Data Components</li>
+            </ul>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Conceptual Data</h3>
+                </div>
+                <div class="panel-body">
+                    <div class="col-md-12">
+                        <table class="table table-striped custab">
+                            <thead>
+                               <tr>
+                                    <th>Order ID</th>
+                                    <th>Total</th>
+                                    <th>Date</th>
+                                    <th>Time</th>
+                                    <th>Time</th>
+                                    <th >Customer ID</th>
+                                    <th>Order Details</th>
+                                    <th>Customer Details</th>
+                                    <th>Select Rider</th>
+                                    <th>Panding Order</th>
+                                    <th>Get Order</th>    
+                                </tr>
+                            </thead>    
+                            <tr *ngFor="let orderDetails of customerOrdes"   >
+                                <td>{{orderDetails.oderID}}</td>
+                                <td>{{orderDetails.total}}</td> 
+                                <td>{{datepipe.transform(orderDetails.date, 'yyyy-MM-dd')}}</td>
+                                <td>{{datepipe.transform(orderDetails.date, 'hh:mm:ss')}}</td>
+                                <td >{{  now | date:'hh:mm:ss'}}</td>
+                                <td>{{orderDetails.customerDto.id}}</td>
+                                <td><a>OrderDitails</a>
+                                 <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" title="Data owner">
+                                    <button (click)=" getCustomerorderList(orderDetails)" class="btn btn-default btn-xs" >  <span class="glyphicon glyphicon-user"></span></button>
+                                </a>                                   
+                                </td>    
+                                 <td><a>CustomerDitails</a>
+                                    <a data-toggle="collapse" data-parent="#accordion" href="#ccustomerDitls" title="Data owner">
+                                       <button (click)="getCustomer(orderDetails)" class="btn btn-default btn-xs" >  <span class="glyphicon glyphicon-user"></span></button>
+                                   </a>                                     
+                                   </td> 
+                                  
+                                   <td>
+                                        <select [(ngModel)]="selectedRider.riderName" name="riderName" id="riderName" >
+                                                <option *ngFor="let selectedRider of riderOnlinedtos" [value]="selectedRider.riderName">{{selectedRider.riderName}}</option>
+                                            </select>
+                                   </td>
+                                   <td>{{orderDetails.caption}}</td>   
+                                   <td>
+                                        <a class="btn btn-primary a-btn-slide-text"  (click)=" Update(orderDetails)" (click)="getTakingOrder()"(click)="getpandingOrder()">
+                                                <span class="glyphicon glyphicon-send" aria-hidden="true"></span>
+                                                <span><strong>Get Order</strong></span>
+                                       </a>
+                                 </td>      
+                            </tr>                
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="collapseOne" class="panel-collapse collapse">
+            <div class="form-group">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="panel panel-primary">
+                            <div class="panel-heading" style="background-color: brown">
+                                <h3 class="panel-title">Order Details = OID / {{oid}}</h3>
+                            </div>
+                            <div class="panel-body">
+                                <div class="col-md-12">
+                                    <table class="table table-striped custab">
+                                    <thead>
+                                       <tr>
+                                            <th>Order DetailID</th>
+                                            <th>Item Model</th>
+                                            <th>Item Name</th>
+                                            <th>Price</th>
+                                            <th>Qty</th>
+                                            <th>SubTotal</th>
+                                            
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                            <tr *ngFor="let orderDetails of orderDetailDto | paginate: { itemsPerPage: 100, currentPage: q }">
+                                                <td>{{orderDetails.orderDitailDtoID}}</td>
+                                                <td>{{orderDetails.itemModel}}</td>
+                                                <td>{{orderDetails.itemName}}</td>
+                                                <td>{{orderDetails.price}}</td>
+                                                <td>{{orderDetails.qty}}</td>
+                                                <td>{{orderDetails.subTotal}}</td>                                             
+                                            </tr>
+                                            </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="ccustomerDitls" class="panel-collapse collapse">
+                <div class="container">
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-8 col-md-6">
+                                <div class="well well-sm">
+                                    <div class="row">
+                                        <div class="col-sm-10 col-md-4">
+                                            <img [src]="imageUrl" style="width: 250px;height: 200px" alt="" class="img-rounded img-responsive" />
+                                        </div>
+                                        <div class="col-sm-6 col-md-8">
+                                            <h4>
+                                                {{fullName}}</h4>
+                                            <small><cite title="San Francisco, USA">{{address}}<i class="glyphicon glyphicon-map-marker">
+                                            </i></cite></small>
+                                            <p>
+                                                <i class="glyphicon glyphicon-envelope"></i>{{email}}.com
+                                                <br />                                              
+                                                <i class="glyphicon glyphicon-globe"></i>{{distriac}}
+                                                <br />
+                                                <i class="glyphicon glyphicon-gift"></i>{{teleponeNO}}</p>
+                                            <!-- Split button -->
+                                            <div class="btn-group">
+                                                <button type="button" class="btn btn-primary">
+                                                    Social</button>
+                                                <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+                                                    <span class="caret"></span><span class="sr-only">Social</span>
+                                                </button>
+                                                <ul class="dropdown-menu" role="menu">
+                                                    <li><a href="#">Twitter</a></li>
+                                                    <li><a href="https://plus.google.com/+Jquery2dotnet/posts">Google +</a></li>
+                                                    <li><a href="https://www.facebook.com/jquery2dotnet">Facebook</a></li>
+                                                    <li class="divider"></li>
+                                                    <li><a href="#">Github</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+    <div class="row">
+      <div class="col-md-12">
+          <div class="panel panel-primary">
+              <div class="panel-heading">
+                  <h3 class="panel-title">Conceptual Data</h3>
+              </div>
+              <div class="panel-body">
+                  <div class="col-md-12">
+                      <table class="table table-striped custab">
+                      <thead>
+                         <tr>
+                            <th>Order ID</th>
+                            <th>Total</th>
+                            <th>Date</th>
+                            <th>Time</th>
+                            <th>Time</th>
+                            <th>Customer ID</th>
+                            <th>Rider Name</th>
+                            <th>Taking Order</th>
+                            <th>Submit Order</th>
+                            <th>Cancel Order</th>
+                          </tr>
+                      </thead>
+                        
+                      <tr *ngFor="let takingOrdes of takingCustomerOrdes"   >
+                        <td>{{takingOrdes.oderID}}</td>
+                        <td>{{takingOrdes.total}}</td> 
+                        <td>{{datepipe.transform(takingOrdes.date, 'yyyy-MM-dd')}}</td>
+                        <td>{{datepipe.transform(takingOrdes.date, 'hh:mm:ss')}}</td>
+                        <td >{{now | date:'hh:mm:ss'}}</td>
+                        <td>{{takingOrdes.customerDto.id}}</td>
+                        <td>{{takingOrdes.riderName}}</td>
+                        <td>{{takingOrdes.caption}}</td>
+                        <td>
+                            <a class="btn btn-primary a-btn-slide-text"data-toggle="collapse" data-parent="#submitorder" href="#submitorder" title="Data owner">
+                                <span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span>
+                                <span><strong>Submit</strong></span>
+                           </a>   
+                           <div id="submitorder" class="panel-collapse collapse">
+                            <div id="login-overlay" class="modal-dialog">
+                             <div class="modal-content">
+                                 <div class="modal-header">
+                                     <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+                                     <h4 class="modal-title" id="myModalLabel">Sabmit Order</h4>
+                                 </div>
+                                 <div class="modal-body">
+                                     <div class="row">
+                                         <div class="col-xs-6">
+                                             <div class="well">
+                                                 <form id="loginForm" method="POST" action="/login/" novalidate="novalidate">
+                                                     <div class="form-group">
+                                                         <label for="payamentModel" class="control-label">Payment Model</label>
+                                                         <div class="form-group">
+                                                             <select class="form-control" [(ngModel)]="selectesbmitOrder.paymentModel"  name="paymentModel">
+                                                               <option value="0">What is the Payment Model..?</option>
+                                                               <option value="Cash">Cash</option>
+                                                               <option value="Visa Card">Visa Card</option>
+                                                               <option value="MasterCard">MasterCard</option>
+                                                             </select>
+                                                           </div>
+                                                     </div>
+                                                     <div class="form-group">
+                                                         <label for="Payment" class="control-label">Payment</label>
+                                                         <input [(ngModel)]="selectesbmitOrder.payament" type="Payment" class="form-control" id="Payment" name="Payment" value="" required="" title="Please enter Customer Payment">
+                                                         <span class="help-block"></span>
+                                                     </div>
+                                                     <button (click)="sbmitRiderOrder(takingOrdes)" type="submit" class="btn btn-success btn-block">Sabmit Order</button>
+                                                 </form>
+                                             </div>
+                                         </div>
+                                         <div class="col-xs-6">
+                                             <p class="lead"><span class="text-success">Plce Check Order information</span></p>
+                                             <ul class="list-unstyled" style="line-height: 2">
+                                                 <li><span class="fa fa-check text-success"></span> See all your orders</li>
+                                                 <li><span class="fa fa-check text-success"></span> Fast Dilver Time</li>
+                                                 <li><span class="fa fa-check text-success"></span> Save only Get Order Rider Name</li>
+                                                 <li><span class="fa fa-check text-success"></span> checkout now</li>
+                                                 <li><span class="fa fa-check text-success"></span> Payment Details checkout now <small>(only use get Order Rider)</small></li>
+                                                 
+                                             </ul>
+                                           
+                                         </div>
+                                     </div>
+                                 </div>
+                             </div>
+                         </div>
+                     </div>
+                       </td>
+                        <td>
+                            <a class="btn btn-primary a-btn-slide-text" (click)="CansalOrder(takingOrdes)"style="background-color: red">
+                                <span class="glyphicon glyphicon-chevron-up" aria-hidden="true" ></span>
+                                <span><strong>Cancel</strong></span>
+                             </a>  
+                        </td>      
+                    </tr>         
+                      </table>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+</section>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.11/angular.min.js"></script>
+<script>
+var module = angular.module('myApp', []);
+module.controller('TimeCtrl', function($scope, $interval) {
+  var tick = function() {
+    $scope.clock = Date.now();
+  }
+  tick();
+  $interval(tick, 1000);
+});
+</script>
+
+
+
+
+
+
+
+
+

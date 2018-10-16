@@ -1,0 +1,166 @@
+<br><br><br>
+  <div class="content">
+    <section class="content-header">
+      <h1>
+       Customer Informations
+        <small>Preview</small>
+      </h1>
+      <ol class="breadcrumb">
+        <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+        <li><a href="#">Forms</a></li>
+        <li class="active">Customer Informations </li>
+      </ol>
+    </section>
+    <br>
+
+    <div class="container bootstrap snippet" xmlns="">
+      <div class="row">
+        <div class="col-sm-9"><h1>User Profile Edit</h1></div>
+        <!--<div class="col-sm-2"><a href="/users" class="pull-right"><img title="profile image" class="img-circle img-responsive" src="http://www.gravatar.com/avatar/28fd20ccec6865e2d5f0e1f4446eb7bf?s=100"></a></div>-->
+      </div>
+      <div class="row">
+        <div class="col-sm-3"><!--left col-->
+
+
+          <div class="text-center">
+            <img [src]="imageUrl" class="avatar img-circle img-thumbnail" alt="avatar" style="width: 250px;height: 300px">
+            <h6>Upload a different photo...</h6>
+            <input type="file" #image accept="image/*" img [src]="selectedAddRiders.imageUrl" (change)="handleFileInput($event.target.files)"   name="imageUrl" #itemImage id="imageUrl"  class="text-center center-block file-upload" id="file-simple" (change)="uploadImage($event)" name="imageUrl" >
+          </div><br>
+
+
+          <div class="panel panel-default">
+            <div class="panel-heading">Website <i class="fa fa-link fa-1x"></i></div>
+            <div class="panel-body"><a href="http://bootnipets.com">bootnipets.com</a></div>
+          </div>
+
+
+          <ul class="list-group">
+            <li class="list-group-item text-muted">Activity <i class="fa fa-dashboard fa-1x"></i></li>
+            <li class="list-group-item text-right"><span class="pull-left"><strong>Shares</strong></span> 125</li>
+            <li class="list-group-item text-right"><span class="pull-left"><strong>Likes</strong></span> 13</li>
+            <li class="list-group-item text-right"><span class="pull-left"><strong>Posts</strong></span> 37</li>
+            <li class="list-group-item text-right"><span class="pull-left"><strong>Followers</strong></span> 78</li>
+          </ul>
+
+          <div class="panel panel-default">
+            <div class="panel-heading">Social Media</div>
+            <div class="panel-body">
+              <i class="fa fa-facebook fa-2x"></i> <i class="fa fa-github fa-2x"></i> <i class="fa fa-twitter fa-2x"></i> <i class="fa fa-pinterest fa-2x"></i> <i class="fa fa-google-plus fa-2x"></i>
+            </div>
+          </div>
+
+        </div><!--/col-3-->
+        <div class="col-sm-8">
+          <ul class="nav nav-tabs">
+            <li class="active"><a data-toggle="tab" href="#settings">User Details</a></li>
+          </ul> 
+          <div class="tab-content ">
+            <div class="tab-pane active" id="settings">
+              <hr>
+              <form class="form" action="##" method="post" id="registrationForm">
+                <div class="form-group">
+                  <div class="col-xs-6">
+                    <label for="first_name"><h4>Rider name</h4></label>
+                    <input [(ngModel)]="selectedAddRiders.ridername" id="ridername" type="text" class="form-control" name="first_name" id="first_name" placeholder="first name" title="enter your first name if any.">
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div class="col-xs-6">
+                    <label for="last_name"><h4>Address</h4></label>
+                    <input [(ngModel)]="selectedAddRiders.address" id="address" type="text" class="form-control" name="last_name" id="last_name" placeholder="last name" title="enter your last name if any.">
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div class="col-xs-6">
+                    <label for="phone"><h4>Tele Phone No</h4></label>
+                    <input [(ngModel)]="selectedAddRiders.teleponeNo" id="teleponeNo" type="text" class="form-control" name="phone" id="phone" placeholder="enter phone" title="enter your phone number if any.">
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div class="col-xs-6">
+                    <label for="mobile"><h4>User name</h4></label>
+                    <input [(ngModel)]="selectedAddRiders.username" id="username" type="text" class="form-control" name="mobile" id="mobile" placeholder="enter mobile number" title="enter your mobile number if any.">
+                  </div>
+                </div>
+                <div class="form-group">
+                 <div class="col-xs-6">
+                    <label for="password2"><h4>Password</h4></label>
+                    <input [(ngModel)]="selectedAddRiders.password" id="password" type="password" class="form-control" name="password2" id="password2" placeholder="password2" title="enter your password2.">
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div class="col-xs-12">
+                    <br>
+                    <button (click)="saveEvents()" class="btn btn-lg btn-success pull-right" type="submit"><i class="glyphicon glyphicon-ok-sign"></i> Save</button>
+                    <!--<button class="btn btn-lg" type="reset"><i class="glyphicon glyphicon-repeat"></i> Reset</button>-->
+                  </div>
+                </div>
+
+                <br>
+                <br>
+                <br>
+
+                <div class="container  col-sm-12">
+                  <table id="cart" class="table table-hover table-condensed">
+                    <thead>
+                      <tr>
+                        <th style="width:28%">Product</th>
+                        <th style="width:10%">itemName</th>
+                        <th style="width:10%">itemprice</th>
+                        <th style="width:10%">itemModel</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <br>
+                      <br>
+                      <!--(click)="SelectedOrders(orders)" [class.selected]="orders==selectedOrders"-->
+                      <tr *ngFor="let item  of additemDto | paginate: { itemsPerPage: 5, currentPage: p };let a">
+                        <td data-th="Product">
+                          <div class="row">
+                            <div class="col-sm-9 hidden-xs"><img [src]="item.itemImage" class="img-responsive img-thumbnail" alt="avatar"
+                                style="width: 250px;height: 180px"></div>
+                          </div>
+                        </td>
+                        <!-- <td>{{item.itemName }}</td>
+                        <td>{{item.itemprice }}</td>
+                        <td>{{item.itemModel}}</td>
+                        <td>{{item.discription}}</td>
+                        <td>{{item.date}}</td>
+                        <td>{{item.time}}</td> -->
+                        <!-- <td class="actions" data-th="">
+                            <a href="#" class="btn btn-primary a-btn-slide-text" style="background-color: red">
+                                <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+                                <span><strong>Delete</strong></span>            
+                            </a>
+                            <a href="#" class="btn btn-primary a-btn-slide-text" style="background-color : blue">
+                                <span class="glyphicon glyphicon-scissors" aria-hidden="true"></span>
+                                <span><strong>Edit....</strong></span>            
+                            </a>
+                        </td> -->
+                      </tr>
+                    </tbody>
+            
+                    <tfoot>
+                      <tr>
+                        <td colspan="4">
+                          <pagination-controls (pageChange)="p = $event"></pagination-controls>
+                        </td>
+                      </tr>
+                      </tfoot>
+                  </table>
+                </div>
+
+
+              </form>  
+            </div>   
+          </div><!--/tab-pane-->   
+        </div><!--/tab-content-->
+      </div><!--/col-9-->
+    </div><!--/row-->
+   <!--/ <script>-->
+
+    
+
+
+  </div>
